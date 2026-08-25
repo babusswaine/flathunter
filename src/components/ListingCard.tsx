@@ -1,11 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
-import { PlatformMark } from "./PlatformMark";
-import { StatusSelect } from "./StatusSelect";
-import { FavoriteToggle } from "./FavoriteToggle";
-import { BedIcons, FeatureIcons } from "./ListingFeatures";
 import { formatAddress, formatCurrency } from "@/lib/format";
 import type { Listing, ListingStatus } from "@/lib/types";
+import { FavoriteToggle } from "./FavoriteToggle";
+import { BedIcons, FeatureIcons } from "./ListingFeatures";
+import { PlatformMark } from "./PlatformMark";
+import { StatusSelect } from "./StatusSelect";
 
 export function ListingCard({
   listing,
@@ -63,9 +63,7 @@ export function ListingCard({
             {formatCurrency(listing.price.amount, listing.price.currency)}/{listing.price.period}
           </span>
           <BedIcons count={listing.bedrooms} />
-          <span>
-            {listing.bathrooms}ba
-          </span>
+          <span>{listing.bathrooms}ba</span>
           {listing.size_sqm !== null && <span>{listing.size_sqm} m²</span>}
           {listing.price_per_sqm !== null && (
             <span>

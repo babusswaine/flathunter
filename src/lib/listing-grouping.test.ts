@@ -8,7 +8,11 @@ function listing(overrides: Partial<Listing> = {}): Listing {
   nextId += 1;
   return {
     id: `listing-${nextId}`,
-    source: { platform: "dotproperty", url: "https://example.com", captured_at: "2026-01-01T00:00:00Z" },
+    source: {
+      platform: "dotproperty",
+      url: "https://example.com",
+      captured_at: "2026-01-01T00:00:00Z",
+    },
     title: "Test listing",
     property_type: "condo",
     location: {
@@ -37,15 +41,23 @@ function listing(overrides: Partial<Listing> = {}): Listing {
 
 describe("sortListings", () => {
   it("sorts ascending by price", () => {
-    const cheap = listing({ price: { amount: 30000, currency: "PHP", period: "month", dues_included: false } });
-    const expensive = listing({ price: { amount: 90000, currency: "PHP", period: "month", dues_included: false } });
+    const cheap = listing({
+      price: { amount: 30000, currency: "PHP", period: "month", dues_included: false },
+    });
+    const expensive = listing({
+      price: { amount: 90000, currency: "PHP", period: "month", dues_included: false },
+    });
     const sorted = sortListings([expensive, cheap], "price", "asc");
     expect(sorted.map((l) => l.id)).toEqual([cheap.id, expensive.id]);
   });
 
   it("sorts descending when asked", () => {
-    const cheap = listing({ price: { amount: 30000, currency: "PHP", period: "month", dues_included: false } });
-    const expensive = listing({ price: { amount: 90000, currency: "PHP", period: "month", dues_included: false } });
+    const cheap = listing({
+      price: { amount: 30000, currency: "PHP", period: "month", dues_included: false },
+    });
+    const expensive = listing({
+      price: { amount: 90000, currency: "PHP", period: "month", dues_included: false },
+    });
     const sorted = sortListings([cheap, expensive], "price", "desc");
     expect(sorted.map((l) => l.id)).toEqual([expensive.id, cheap.id]);
   });
@@ -66,23 +78,52 @@ describe("sortListings", () => {
 
 describe("groupByCityAndNeighborhood", () => {
   it("groups listings under their city, then their neighborhood", () => {
-    const a = listing({ location: { country: "PH", city: "Makati", neighborhood: "Legazpi Village", building_name: null, street: null } });
-    const b = listing({ location: { country: "PH", city: "Makati", neighborhood: "Salcedo Village", building_name: null, street: null } });
-    const c = listing({ location: { country: "DE", city: "Hannover", neighborhood: "Oststadt", building_name: null, street: null } });
+    const a = listing({
+      location: {
+        country: "PH",
+        city: "Makati",
+        neighborhood: "Legazpi Village",
+        building_name: null,
+        street: null,
+      },
+    });
+    const b = listing({
+      location: {
+        country: "PH",
+        city: "Makati",
+        neighborhood: "Salcedo Village",
+        building_name: null,
+        street: null,
+      },
+    });
+    const c = listing({
+      location: {
+        country: "DE",
+        city: "Hannover",
+        neighborhood: "Oststadt",
+        building_name: null,
+        street: null,
+      },
+    });
 
     const groups = groupByCityAndNeighborhood([a, b, c], "price", "asc");
 
     expect(groups.map((g) => g.city)).toEqual(["Hannover", "Makati"]);
-    const makati = groups.find((g) => g.city === "Makati")!;
-    expect(makati.neighborhoods.map((n) => n.neighborhood)).toEqual([
+    const makati = groups.find((g) => g.city === "Makati");
+    expect(makati).toBeDefined();
+    expect(makati?.neighborhoods.map((n) => n.neighborhood)).toEqual([
       "Legazpi Village",
       "Salcedo Village",
     ]);
   });
 
   it("sorts listings within each neighborhood group", () => {
-    const cheap = listing({ price: { amount: 30000, currency: "PHP", period: "month", dues_included: false } });
-    const expensive = listing({ price: { amount: 90000, currency: "PHP", period: "month", dues_included: false } });
+    const cheap = listing({
+      price: { amount: 30000, currency: "PHP", period: "month", dues_included: false },
+    });
+    const expensive = listing({
+      price: { amount: 90000, currency: "PHP", period: "month", dues_included: false },
+    });
 
     const groups = groupByCityAndNeighborhood([expensive, cheap], "price", "asc");
 
@@ -92,9 +133,33 @@ describe("groupByCityAndNeighborhood", () => {
 
 describe("cityOptions", () => {
   it("counts listings per city and records each city's country", () => {
-    const a = listing({ location: { country: "PH", city: "Makati", neighborhood: "Legazpi Village", building_name: null, street: null } });
-    const b = listing({ location: { country: "PH", city: "Makati", neighborhood: "Salcedo Village", building_name: null, street: null } });
-    const c = listing({ location: { country: "DE", city: "Hannover", neighborhood: "Oststadt", building_name: null, street: null } });
+    const a = listing({
+      location: {
+        country: "PH",
+        city: "Makati",
+        neighborhood: "Legazpi Village",
+        building_name: null,
+        street: null,
+      },
+    });
+    const b = listing({
+      location: {
+        country: "PH",
+        city: "Makati",
+        neighborhood: "Salcedo Village",
+        building_name: null,
+        street: null,
+      },
+    });
+    const c = listing({
+      location: {
+        country: "DE",
+        city: "Hannover",
+        neighborhood: "Oststadt",
+        building_name: null,
+        street: null,
+      },
+    });
 
     const options = cityOptions([a, b, c]);
 

@@ -42,7 +42,7 @@ export function CityCard({
       <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-transparent" />
       {country && (
         <span className="absolute right-2 top-2 h-4 w-6 overflow-hidden rounded-sm shadow">
-          {/* eslint-disable-next-line @next/next/no-img-element -- tiny local SVG, not worth next/image's optimizer pipeline */}
+          {/* biome-ignore lint/performance/noImgElement: tiny local SVG, not worth next/image's optimizer pipeline */}
           <img
             src={`/flags/${country.toLowerCase()}.svg`}
             alt={country}

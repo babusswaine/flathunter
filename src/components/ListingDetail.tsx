@@ -3,16 +3,16 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import { PlatformMark } from "./PlatformMark";
-import { StatusSelect } from "./StatusSelect";
-import { FavoriteToggle } from "./FavoriteToggle";
-import { BedIcons, FeatureIcons } from "./ListingFeatures";
-import { Field } from "./Field";
 import { useListing } from "@/hooks/useListing";
 import { amenityLabel } from "@/lib/amenities";
 import { formatCurrency } from "@/lib/format";
 import { ICONIFIED_AMENITY_TAGS } from "@/lib/listing-features";
 import type { Listing } from "@/lib/types";
+import { FavoriteToggle } from "./FavoriteToggle";
+import { Field } from "./Field";
+import { BedIcons, FeatureIcons } from "./ListingFeatures";
+import { PlatformMark } from "./PlatformMark";
+import { StatusSelect } from "./StatusSelect";
 
 export function ListingDetail({ listing: initial }: { listing: Listing }) {
   const { listing, updateFavorite, updateStatus, saveNotes, remove } = useListing(initial);
@@ -79,7 +79,7 @@ export function ListingDetail({ listing: initial }: { listing: Listing }) {
       <div className="grid grid-cols-2 gap-4 rounded-lg border border-zinc-200 p-4 sm:grid-cols-3 dark:border-zinc-800">
         <Field
           label="Location"
-          value={`${listing.location.neighborhood ? listing.location.neighborhood + ", " : ""}${listing.location.city}`}
+          value={`${listing.location.neighborhood ? `${listing.location.neighborhood}, ` : ""}${listing.location.city}`}
         />
         <Field label="Building" value={listing.location.building_name} />
         <Field label="Street" value={listing.location.street} />
@@ -125,10 +125,7 @@ export function ListingDetail({ listing: initial }: { listing: Listing }) {
               : null
           }
         />
-        <Field
-          label="Pets"
-          value={listing.rules.pets_allowed === false ? "Not allowed" : null}
-        />
+        <Field label="Pets" value={listing.rules.pets_allowed === false ? "Not allowed" : null} />
         <Field
           label="Contact"
           value={

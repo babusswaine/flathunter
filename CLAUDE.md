@@ -1,6 +1,21 @@
 @AGENTS.md
 @"/Users/leonesquillon/Downloads/CLAUDE.md"
 
+## Rules
+
+- Never merge a PR without explicit user permission. Always ask first.
+- Never push to any branch without asking the user first.
+- Never commit secrets — no API keys, tokens, cookies, or .env values in code or messages.
+- Conventional commits — use feat:, fix:, chore:, docs:, refactor:, test:, etc.
+- Branch naming — <ticket-number>-<slug> (e.g. `3-idealista-client`).
+- PR format — every PR must reference its issue (`Closes #N`) and include a brief "what this PR does" summary.
+- Pre-merge checks — CI must be green before asking to merge. Run lint, typecheck, and tests locally before pushing.
+- Doc updates — update CONTEXT.md when domain terms change or appear. Create ADRs for hard-to-reverse decisions. Update PLAN.md on scope/architecture shifts. Always ask the user before updating docs.
+
+Local commands for the pre-merge checks: `npm run format:check`, `npm run lint`, `npm run typecheck`, `npm test` (or `npm run format`/`biome check --write .` to fix what's fixable). The same four run as separate checks in `.github/workflows/ci.yml` on every PR.
+
+`PLAN.md` doesn't exist yet — per "always ask before updating docs," it isn't being created preemptively. Create it (after asking) the first time a real scope/architecture shift actually happens, same lazy-creation approach already used for `CONTEXT.md`/`docs/adr/`.
+
 ## Adding a listing
 
 When the user pastes a rental listing URL in this session:

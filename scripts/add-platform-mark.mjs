@@ -5,7 +5,7 @@
 // Usage: node scripts/add-platform-mark.mjs <platform> "<image-url>" [--invert]
 // --invert flips a monochrome dark logo to light (alpha preserved) — for
 // brand marks that are illegible against this app's dark card backgrounds.
-import { readFile, writeFile, mkdir } from "node:fs/promises";
+import { mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import sharp from "sharp";
 
@@ -56,5 +56,5 @@ try {
   // no existing file yet
 }
 meta[platform] = { image: `/platforms/${platform}.png`, width, height };
-await writeFile(META_PATH, JSON.stringify(meta, null, 2) + "\n");
+await writeFile(META_PATH, `${JSON.stringify(meta, null, 2)}\n`);
 console.log(`Saved wordmark for "${platform}" -> /platforms/${platform}.png (${width}x${height})`);

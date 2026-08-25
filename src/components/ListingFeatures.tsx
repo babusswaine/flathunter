@@ -1,4 +1,12 @@
-import { Bed, ChefHat, PawPrint, ShowerHead, WashingMachine, Wifi, type LucideIcon } from "lucide-react";
+import {
+  Bed,
+  ChefHat,
+  type LucideIcon,
+  PawPrint,
+  ShowerHead,
+  WashingMachine,
+  Wifi,
+} from "lucide-react";
 import { activeFeatures, type ListingFeature } from "@/lib/listing-features";
 import type { Listing } from "@/lib/types";
 
@@ -10,8 +18,12 @@ export function BedIcons({ count }: { count: number }) {
   }
   const shown = Math.min(count, MAX_BED_ICONS);
   return (
-    <span className="inline-flex items-center gap-0.5" title={`${count} bedroom${count === 1 ? "" : "s"}`}>
+    <span
+      className="inline-flex items-center gap-0.5"
+      title={`${count} bedroom${count === 1 ? "" : "s"}`}
+    >
       {Array.from({ length: shown }).map((_, i) => (
+        // biome-ignore lint/suspicious/noArrayIndexKey: decorative repeated icons with no identity of their own
         <Bed key={i} className="h-4 w-4 text-zinc-600 dark:text-zinc-400" />
       ))}
       {count > MAX_BED_ICONS && (
@@ -29,13 +41,7 @@ const FEATURE_ICONS: Record<ListingFeature["key"], LucideIcon> = {
   pets: PawPrint,
 };
 
-export function FeatureIcons({
-  listing,
-  labels = false,
-}: {
-  listing: Listing;
-  labels?: boolean;
-}) {
+export function FeatureIcons({ listing, labels = false }: { listing: Listing; labels?: boolean }) {
   const active = activeFeatures(listing);
   if (active.length === 0) return null;
 
@@ -44,7 +50,10 @@ export function FeatureIcons({
       {active.map(({ key, label }) => {
         const Icon = FEATURE_ICONS[key];
         return labels ? (
-          <div key={key} className="flex items-center gap-1.5 text-sm text-zinc-600 dark:text-zinc-400">
+          <div
+            key={key}
+            className="flex items-center gap-1.5 text-sm text-zinc-600 dark:text-zinc-400"
+          >
             <Icon className="h-4 w-4" />
             <span>{label}</span>
           </div>

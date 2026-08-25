@@ -1,5 +1,5 @@
-import { readListings } from "@/lib/listings-store";
 import { ListingBrowser } from "@/components/ListingBrowser";
+import { readListings } from "@/lib/listings-store";
 
 export default async function Home() {
   const listings = await readListings();

@@ -93,10 +93,7 @@
       "advance_months": null,
       "minimum_lease_months": 12
     },
-    "amenities": [
-      "24h_security",
-      "balcony"
-    ],
+    "amenities": ["24h_security", "balcony"],
     "rules": {
       "pets_allowed": null
     },
@@ -144,9 +141,7 @@
       "advance_months": null,
       "minimum_lease_months": null
     },
-    "amenities": [
-      "balcony"
-    ],
+    "amenities": ["balcony"],
     "rules": {
       "pets_allowed": false
     },
@@ -199,11 +194,7 @@
       "advance_months": null,
       "minimum_lease_months": null
     },
-    "amenities": [
-      "kitchen",
-      "wifi_ready",
-      "swimming_pool"
-    ],
+    "amenities": ["kitchen", "wifi_ready", "swimming_pool"],
     "rules": {
       "pets_allowed": null
     },
@@ -256,11 +247,7 @@
       "advance_months": null,
       "minimum_lease_months": null
     },
-    "amenities": [
-      "balcony",
-      "aircon_installed",
-      "kitchen"
-    ],
+    "amenities": ["balcony", "aircon_installed", "kitchen"],
     "rules": {
       "pets_allowed": null
     },

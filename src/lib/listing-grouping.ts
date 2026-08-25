@@ -32,10 +32,12 @@ export function groupByCityAndNeighborhood(
 ): CityGroup[] {
   const cityMap = new Map<string, Map<string, Listing[]>>();
   for (const l of listings) {
-    if (!cityMap.has(l.location.city)) cityMap.set(l.location.city, new Map());
-    const neighborhoods = cityMap.get(l.location.city)!;
-    if (!neighborhoods.has(l.location.neighborhood)) neighborhoods.set(l.location.neighborhood, []);
-    neighborhoods.get(l.location.neighborhood)!.push(l);
+    const neighborhoods = cityMap.get(l.location.city) ?? new Map<string, Listing[]>();
+    cityMap.set(l.location.city, neighborhoods);
+
+    const group = neighborhoods.get(l.location.neighborhood) ?? [];
+    group.push(l);
+    neighborhoods.set(l.location.neighborhood, group);
   }
   return Array.from(cityMap.entries())
     .sort((a, b) => a[0].localeCompare(b[0]))

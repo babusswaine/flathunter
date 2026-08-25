@@ -1,8 +1,6 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { CityCard } from "./CityCard";
-import { ListingCard } from "./ListingCard";
 import { useListings } from "@/hooks/useListings";
 import { getCityLandmark } from "@/lib/city-landmarks";
 import {
@@ -12,6 +10,8 @@ import {
   type SortField,
 } from "@/lib/listing-grouping";
 import type { Listing } from "@/lib/types";
+import { CityCard } from "./CityCard";
+import { ListingCard } from "./ListingCard";
 
 const SORT_LABELS: Record<SortField, string> = {
   price: "Price",
@@ -37,8 +37,8 @@ export function ListingBrowser({ initialListings }: { initialListings: Listing[]
       <div className="flex flex-1 flex-col items-center justify-center gap-2 py-24 text-center">
         <p className="text-lg font-medium">No listings yet</p>
         <p className="max-w-sm text-sm text-zinc-500">
-          Paste a listing URL from DotProperty, Rentpad, or Facebook into this Claude
-          Code session and it&apos;ll be extracted and added here.
+          Paste a listing URL from DotProperty, Rentpad, or Facebook into this Claude Code session
+          and it&apos;ll be extracted and added here.
         </p>
       </div>
     );

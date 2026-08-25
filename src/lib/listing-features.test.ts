@@ -5,10 +5,20 @@ import type { Listing } from "./types";
 function listing(overrides: Partial<Listing> = {}): Listing {
   return {
     id: "test",
-    source: { platform: "dotproperty", url: "https://example.com", captured_at: "2026-01-01T00:00:00Z" },
+    source: {
+      platform: "dotproperty",
+      url: "https://example.com",
+      captured_at: "2026-01-01T00:00:00Z",
+    },
     title: "Test listing",
     property_type: "condo",
-    location: { country: "PH", city: "Makati", neighborhood: "Legazpi Village", building_name: null, street: null },
+    location: {
+      country: "PH",
+      city: "Makati",
+      neighborhood: "Legazpi Village",
+      building_name: null,
+      street: null,
+    },
     bedrooms: 1,
     bathrooms: 1,
     size_sqm: 50,
@@ -32,7 +42,9 @@ describe("activeFeatures", () => {
   });
 
   it("picks up features from matching amenity tags", () => {
-    const keys = activeFeatures(listing({ amenities: ["kitchen", "wifi_ready"] })).map((f) => f.key);
+    const keys = activeFeatures(listing({ amenities: ["kitchen", "wifi_ready"] })).map(
+      (f) => f.key,
+    );
     expect(keys).toEqual(["kitchen", "wifi"]);
   });
 

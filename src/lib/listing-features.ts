@@ -16,7 +16,12 @@ export const LISTING_FEATURES: ListingFeature[] = [
 
 // Amenity tags that get dedicated feature treatment above — excluded from the
 // generic amenities chip list so they don't render twice.
-export const ICONIFIED_AMENITY_TAGS = new Set(["kitchen", "hot_shower", "wifi_ready", "laundry_area"]);
+export const ICONIFIED_AMENITY_TAGS = new Set([
+  "kitchen",
+  "hot_shower",
+  "wifi_ready",
+  "laundry_area",
+]);
 
 export function activeFeatures(listing: Listing): ListingFeature[] {
   return LISTING_FEATURES.filter((f) => f.present(listing));

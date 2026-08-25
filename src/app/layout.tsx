@@ -15,15 +15,13 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Flat Hunter",
-  description: "Browse and track PH rental listings captured from Lamudi, DotProperty, Rentpad, and Facebook.",
+  description:
+    "Browse and track PH rental listings captured from Lamudi, DotProperty, Rentpad, and Facebook.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html
-      lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-    >
+    <html lang="en" className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col">
         <NavBar />
         {children}

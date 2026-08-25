@@ -2,7 +2,7 @@
 // Downloads a landmark photo for a city, normalizes it to 16:9, and records
 // it in src/lib/city-landmarks.json for the main screen's city cards.
 // Usage: node scripts/add-city-landmark.mjs "Makati" "<image-url>" "Photo by X, CC BY 3.0"
-import { readFile, writeFile, mkdir } from "node:fs/promises";
+import { mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import sharp from "sharp";
 
@@ -49,5 +49,5 @@ try {
   // no existing file yet
 }
 meta[city] = { image: `/cities/${slug}.jpg`, attribution: attribution ?? null };
-await writeFile(META_PATH, JSON.stringify(meta, null, 2) + "\n");
+await writeFile(META_PATH, `${JSON.stringify(meta, null, 2)}\n`);
 console.log(`Saved landmark for "${city}" -> /cities/${slug}.jpg`);

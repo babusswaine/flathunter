@@ -13,11 +13,7 @@ export type Platform = (typeof PLATFORMS)[number];
 export const PROPERTY_TYPES = ["condo", "apartment", "house", "studio"] as const;
 export type PropertyType = (typeof PROPERTY_TYPES)[number];
 
-export const FURNISHING_OPTIONS = [
-  "unfurnished",
-  "semi_furnished",
-  "fully_furnished",
-] as const;
+export const FURNISHING_OPTIONS = ["unfurnished", "semi_furnished", "fully_furnished"] as const;
 export type Furnishing = (typeof FURNISHING_OPTIONS)[number];
 
 export const STATUSES = [

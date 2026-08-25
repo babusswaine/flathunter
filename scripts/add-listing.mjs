@@ -4,7 +4,7 @@
 // (upscaling smaller images via high-quality resampling, cropping larger
 // ones) into public/photos/<listing-id>/.
 // Usage: node scripts/add-listing.mjs '<json>'   (or pipe JSON via stdin)
-import { readFile, writeFile, mkdir } from "node:fs/promises";
+import { mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import sharp from "sharp";
 import vocabulary from "../src/lib/amenity-vocabulary.json" with { type: "json" };
@@ -67,7 +67,8 @@ async function processPhoto(url, listingId, index, referer) {
 
 async function main() {
   const raw = process.argv[2] ?? (await readStdin());
-  if (!raw) fail("no input JSON given (arg or stdin) — see scripts/add-listing.mjs for the expected shape");
+  if (!raw)
+    fail("no input JSON given (arg or stdin) — see scripts/add-listing.mjs for the expected shape");
 
   let input;
   try {
@@ -76,7 +77,16 @@ async function main() {
     fail(`invalid JSON: ${e.message}`);
   }
 
-  for (const key of ["title", "property_type", "location", "bedrooms", "bathrooms", "furnishing", "price", "source"]) {
+  for (const key of [
+    "title",
+    "property_type",
+    "location",
+    "bedrooms",
+    "bathrooms",
+    "furnishing",
+    "price",
+    "source",
+  ]) {
     if (input[key] === undefined) fail(`missing required field "${key}"`);
   }
   if (!PROPERTY_TYPES.includes(input.property_type))
@@ -175,7 +185,7 @@ async function main() {
   }
 
   existing.push(listing);
-  await writeFile(DATA_PATH, JSON.stringify(existing, null, 2) + "\n");
+  await writeFile(DATA_PATH, `${JSON.stringify(existing, null, 2)}\n`);
   console.log(
     `Added "${listing.title}" (${listing.id}) — ${photos.length}/${photoUrls.length} photo(s) processed — ${existing.length} listing(s) total.`,
   );

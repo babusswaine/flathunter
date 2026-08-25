@@ -4,9 +4,7 @@ import type { Listing } from "./types";
 // usually the neighborhood) obvious from context — falls back to
 // neighborhood if neither is known.
 export function formatAddress(location: Listing["location"]): string {
-  const parts = [location.building_name, location.street].filter(
-    (p): p is string => Boolean(p),
-  );
+  const parts = [location.building_name, location.street].filter((p): p is string => Boolean(p));
   return parts.length > 0 ? parts.join(", ") : location.neighborhood;
 }
 

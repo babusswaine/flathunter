@@ -1,12 +1,9 @@
 import { NextResponse } from "next/server";
 import { deleteListing, updateListingUser } from "@/lib/listings-store";
-import { STATUSES } from "@/lib/types";
 import type { EditableUserFields } from "@/lib/types";
+import { STATUSES } from "@/lib/types";
 
-export async function PATCH(
-  request: Request,
-  ctx: RouteContext<"/api/listings/[id]">,
-) {
+export async function PATCH(request: Request, ctx: RouteContext<"/api/listings/[id]">) {
   const { id } = await ctx.params;
   const body = await request.json();
 
@@ -27,10 +24,7 @@ export async function PATCH(
   return NextResponse.json(updated);
 }
 
-export async function DELETE(
-  _request: Request,
-  ctx: RouteContext<"/api/listings/[id]">,
-) {
+export async function DELETE(_request: Request, ctx: RouteContext<"/api/listings/[id]">) {
   const { id } = await ctx.params;
   const ok = await deleteListing(id);
   if (!ok) {

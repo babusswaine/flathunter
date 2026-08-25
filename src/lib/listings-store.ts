@@ -14,7 +14,7 @@ export async function readListings(): Promise<Listing[]> {
 }
 
 async function writeListings(listings: Listing[]): Promise<void> {
-  await writeFile(DATA_PATH, JSON.stringify(listings, null, 2) + "\n");
+  await writeFile(DATA_PATH, `${JSON.stringify(listings, null, 2)}\n`);
 }
 
 export async function updateListingUser(
