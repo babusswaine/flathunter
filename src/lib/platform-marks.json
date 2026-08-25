@@ -1,0 +1,17 @@
+{
+  "rentpad": {
+    "image": "/platforms/rentpad.png",
+    "width": 320,
+    "height": 71
+  },
+  "dotproperty": {
+    "image": "/platforms/dotproperty.png",
+    "width": 155,
+    "height": 40
+  },
+  "idealista": {
+    "image": "/platforms/idealista.png",
+    "width": 320,
+    "height": 60
+  }
+}

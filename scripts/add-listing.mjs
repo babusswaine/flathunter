@@ -1,16 +1,34 @@
 #!/usr/bin/env node
 // Validates and appends one extracted listing to data/listings.json.
+// Downloads any given photo URLs and normalizes each to a 16:9 frame
+// (upscaling smaller images via high-quality resampling, cropping larger
+// ones) into public/photos/<listing-id>/.
 // Usage: node scripts/add-listing.mjs '<json>'   (or pipe JSON via stdin)
 import { readFile, writeFile, mkdir } from "node:fs/promises";
 import path from "node:path";
+import sharp from "sharp";
 import vocabulary from "../src/lib/amenity-vocabulary.json" with { type: "json" };
 
-const DATA_PATH = path.join(import.meta.dirname, "..", "data", "listings.json");
+const ROOT = path.join(import.meta.dirname, "..");
+const DATA_PATH = path.join(ROOT, "data", "listings.json");
+const PHOTOS_DIR = path.join(ROOT, "public", "photos");
 
-const PLATFORMS = ["dotproperty", "lamudi", "rentpad", "fb_marketplace", "fb_group"];
+const PLATFORMS = [
+  "dotproperty",
+  "lamudi",
+  "rentpad",
+  "fb_marketplace",
+  "fb_group",
+  "airbnb",
+  "idealista",
+  "other",
+];
 const PROPERTY_TYPES = ["condo", "apartment", "house", "studio"];
 const FURNISHING = ["unfurnished", "semi_furnished", "fully_furnished"];
 const STATUSES = ["new", "interested", "contacted", "toured", "rejected", "extraction_failed"];
+
+const PHOTO_WIDTH = 1280;
+const PHOTO_HEIGHT = 720; // 16:9
 
 function fail(msg) {
   console.error(`add-listing: ${msg}`);
@@ -22,6 +40,29 @@ async function readStdin() {
   const chunks = [];
   for await (const chunk of process.stdin) chunks.push(chunk);
   return Buffer.concat(chunks).toString("utf-8").trim();
+}
+
+async function processPhoto(url, listingId, index, referer) {
+  const res = await fetch(url, {
+    headers: {
+      "User-Agent":
+        "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36",
+      ...(referer ? { Referer: referer } : {}),
+    },
+  });
+  if (!res.ok) throw new Error(`fetch failed (${res.status}) for ${url}`);
+  const buffer = Buffer.from(await res.arrayBuffer());
+
+  const dir = path.join(PHOTOS_DIR, listingId);
+  await mkdir(dir, { recursive: true });
+  const filename = `${index + 1}.jpg`;
+
+  await sharp(buffer)
+    .resize(PHOTO_WIDTH, PHOTO_HEIGHT, { fit: "cover", position: "attention" })
+    .jpeg({ quality: 85 })
+    .toFile(path.join(dir, filename));
+
+  return `/photos/${listingId}/${filename}`;
 }
 
 async function main() {
@@ -47,6 +88,11 @@ async function main() {
   if (!input.source?.url) fail("source.url is required");
   if (!input.location?.country || !input.location?.city)
     fail("location.country and location.city are required");
+  if (!input.location?.neighborhood)
+    fail(
+      "location.neighborhood is required — this drives the app's city > neighborhood filter, " +
+        'so use the specific area (e.g. "Legazpi Village"), not just the city',
+    );
   if (input.price?.amount === undefined) fail("price.amount is required");
 
   const amenities = input.amenities ?? [];
@@ -60,9 +106,21 @@ async function main() {
   const status = input.user?.status ?? "new";
   if (!STATUSES.includes(status)) fail(`user.status must be one of ${STATUSES.join(", ")}`);
 
+  const id = crypto.randomUUID();
+
+  const photoUrls = input.photos ?? [];
+  const photos = [];
+  for (let i = 0; i < photoUrls.length; i++) {
+    try {
+      photos.push(await processPhoto(photoUrls[i], id, i, input.source.url));
+    } catch (e) {
+      console.error(`add-listing: warning — skipped photo ${photoUrls[i]}: ${e.message}`);
+    }
+  }
+
   const sizeSqm = input.size_sqm ?? null;
   const listing = {
-    id: crypto.randomUUID(),
+    id,
     source: {
       platform: input.source.platform,
       url: input.source.url,
@@ -73,14 +131,16 @@ async function main() {
     location: {
       country: input.location.country,
       city: input.location.city,
-      neighborhood: input.location.neighborhood ?? "",
+      neighborhood: input.location.neighborhood,
       building_name: input.location.building_name ?? null,
+      street: input.location.street ?? null,
     },
     bedrooms: input.bedrooms,
     bathrooms: input.bathrooms,
     size_sqm: sizeSqm,
     floor_level: input.floor_level ?? null,
     furnishing: input.furnishing,
+    photos,
     price: {
       amount: input.price.amount,
       currency: input.price.currency ?? "PHP",
@@ -116,7 +176,9 @@ async function main() {
 
   existing.push(listing);
   await writeFile(DATA_PATH, JSON.stringify(existing, null, 2) + "\n");
-  console.log(`Added "${listing.title}" (${listing.id}) — ${existing.length} listing(s) total.`);
+  console.log(
+    `Added "${listing.title}" (${listing.id}) — ${photos.length}/${photoUrls.length} photo(s) processed — ${existing.length} listing(s) total.`,
+  );
 }
 
 main();

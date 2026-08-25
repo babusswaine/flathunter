@@ -1,0 +1,14 @@
+{
+  "Makati": {
+    "image": "/cities/makati.jpg",
+    "attribution": "Ayala Triangle Gardens, Makati — photo by RioHondo, CC BY 3.0, via Wikimedia Commons"
+  },
+  "Hannover": {
+    "image": "/cities/hannover.jpg",
+    "attribution": "Neues Rathaus, Hannover — photo by Bärbel Miemietz, CC BY-SA 4.0, via Wikimedia Commons"
+  },
+  "València": {
+    "image": "/cities/valencia.jpg",
+    "attribution": "City of Arts and Sciences, Valencia — photo by Cateecatee, CC BY-SA 3.0, via Wikimedia Commons"
+  }
+}

@@ -4,6 +4,9 @@ export const PLATFORMS = [
   "rentpad",
   "fb_marketplace",
   "fb_group",
+  "airbnb",
+  "idealista",
+  "other",
 ] as const;
 export type Platform = (typeof PLATFORMS)[number];
 
@@ -50,12 +53,14 @@ export interface Listing {
     city: string;
     neighborhood: string;
     building_name: string | null;
+    street: string | null;
   };
   bedrooms: number;
   bathrooms: number;
   size_sqm: number | null;
   floor_level: string | null;
   furnishing: Furnishing;
+  photos: string[];
   price: {
     amount: number;
     currency: string;

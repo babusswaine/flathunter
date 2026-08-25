@@ -1,1 +1,277 @@
-[]
+[
+  {
+    "id": "674df1e4-54e8-4f17-9f30-902dde261acd",
+    "source": {
+      "platform": "dotproperty",
+      "url": "https://www.dotproperty.com.ph/ads/2-bedroom-condo-for-rent-in-one-legazpi-park-san-lorenzo-metro-manila_c1b774dcc42a-cdef-6992-bd5f-1c951089",
+      "captured_at": "2026-08-24T22:38:22.891Z"
+    },
+    "title": "2 Bedroom Condo for rent in One Legazpi Park, San Lorenzo",
+    "property_type": "condo",
+    "location": {
+      "country": "PH",
+      "city": "Makati",
+      "neighborhood": "Legazpi Village",
+      "building_name": "One Legazpi Park",
+      "street": "Rada Street"
+    },
+    "bedrooms": 2,
+    "bathrooms": 2,
+    "size_sqm": 98,
+    "floor_level": null,
+    "furnishing": "fully_furnished",
+    "photos": [],
+    "price": {
+      "amount": 90000,
+      "currency": "PHP",
+      "period": "month",
+      "dues_included": false
+    },
+    "price_per_sqm": 918.37,
+    "payment_terms": {
+      "deposit_months": null,
+      "advance_months": null,
+      "minimum_lease_months": null
+    },
+    "amenities": [
+      "aircon_installed",
+      "gym",
+      "24h_security",
+      "parking_slot",
+      "concierge",
+      "elevator"
+    ],
+    "rules": {
+      "pets_allowed": null
+    },
+    "contact": {
+      "name": "Luxe Realty",
+      "verified": true
+    },
+    "user": {
+      "favorite": false,
+      "status": "new",
+      "notes": null
+    }
+  },
+  {
+    "id": "d1695814-96a1-4a99-bb35-7a41bcf83300",
+    "source": {
+      "platform": "rentpad",
+      "url": "https://rentpad.com.ph/long-term-rentals/makati/2br-condo-for-rent-in-cattleya-gardens-legazpi-village-makati/74330bcf39",
+      "captured_at": "2026-08-24T22:39:00.117Z"
+    },
+    "title": "2BR Condo for Rent in Cattleya Gardens Legazpi Village Makati",
+    "property_type": "condo",
+    "location": {
+      "country": "PH",
+      "city": "Makati",
+      "neighborhood": "Legazpi Village",
+      "building_name": "Cattleya Gardens",
+      "street": "Carlos Palanca Street"
+    },
+    "bedrooms": 2,
+    "bathrooms": 2,
+    "size_sqm": 118,
+    "floor_level": null,
+    "furnishing": "fully_furnished",
+    "photos": [
+      "/photos/d1695814-96a1-4a99-bb35-7a41bcf83300/1.jpg",
+      "/photos/d1695814-96a1-4a99-bb35-7a41bcf83300/2.jpg",
+      "/photos/d1695814-96a1-4a99-bb35-7a41bcf83300/3.jpg",
+      "/photos/d1695814-96a1-4a99-bb35-7a41bcf83300/4.jpg"
+    ],
+    "price": {
+      "amount": 75000,
+      "currency": "PHP",
+      "period": "month",
+      "dues_included": false
+    },
+    "price_per_sqm": 635.59,
+    "payment_terms": {
+      "deposit_months": null,
+      "advance_months": null,
+      "minimum_lease_months": 12
+    },
+    "amenities": [
+      "24h_security",
+      "balcony"
+    ],
+    "rules": {
+      "pets_allowed": null
+    },
+    "contact": {
+      "name": "Chris",
+      "verified": false
+    },
+    "user": {
+      "favorite": false,
+      "status": "new",
+      "notes": null
+    }
+  },
+  {
+    "id": "bae2a4d9-1aaf-4b4d-a9ae-a06d6286d35d",
+    "source": {
+      "platform": "other",
+      "url": "https://www.immowelt.de/expose/895eb917-60d5-4ced-94e2-4feb06bef7cf",
+      "captured_at": "2026-08-24T22:39:21.982Z"
+    },
+    "title": "[immowelt.de] Maisonette im Zooviertel, Oststadt",
+    "property_type": "apartment",
+    "location": {
+      "country": "DE",
+      "city": "Hannover",
+      "neighborhood": "Oststadt",
+      "building_name": null,
+      "street": null
+    },
+    "bedrooms": 1,
+    "bathrooms": 1,
+    "size_sqm": 214,
+    "floor_level": "3",
+    "furnishing": "unfurnished",
+    "photos": [],
+    "price": {
+      "amount": 2600,
+      "currency": "EUR",
+      "period": "month",
+      "dues_included": false
+    },
+    "price_per_sqm": 12.15,
+    "payment_terms": {
+      "deposit_months": null,
+      "advance_months": null,
+      "minimum_lease_months": null
+    },
+    "amenities": [
+      "balcony"
+    ],
+    "rules": {
+      "pets_allowed": false
+    },
+    "contact": {
+      "name": "Alexander Gensch",
+      "verified": false
+    },
+    "user": {
+      "favorite": false,
+      "status": "new",
+      "notes": null
+    }
+  },
+  {
+    "id": "0bcff2e3-5577-4fa6-97da-6e98e0adef59",
+    "source": {
+      "platform": "airbnb",
+      "url": "https://www.airbnb.com/rooms/1468704208597454249",
+      "captured_at": "2026-08-25T10:00:10.522Z"
+    },
+    "title": "Charming 1BR with Balcony | KL Tower Makati",
+    "property_type": "condo",
+    "location": {
+      "country": "PH",
+      "city": "Makati",
+      "neighborhood": "Legazpi Village",
+      "building_name": "KL Tower",
+      "street": null
+    },
+    "bedrooms": 1,
+    "bathrooms": 1,
+    "size_sqm": null,
+    "floor_level": null,
+    "furnishing": "fully_furnished",
+    "photos": [
+      "/photos/0bcff2e3-5577-4fa6-97da-6e98e0adef59/1.jpg",
+      "/photos/0bcff2e3-5577-4fa6-97da-6e98e0adef59/2.jpg",
+      "/photos/0bcff2e3-5577-4fa6-97da-6e98e0adef59/3.jpg",
+      "/photos/0bcff2e3-5577-4fa6-97da-6e98e0adef59/4.jpg"
+    ],
+    "price": {
+      "amount": 3226.5,
+      "currency": "PHP",
+      "period": "night",
+      "dues_included": true
+    },
+    "price_per_sqm": null,
+    "payment_terms": {
+      "deposit_months": null,
+      "advance_months": null,
+      "minimum_lease_months": null
+    },
+    "amenities": [
+      "kitchen",
+      "wifi_ready",
+      "swimming_pool"
+    ],
+    "rules": {
+      "pets_allowed": null
+    },
+    "contact": {
+      "name": "Ileana",
+      "verified": true
+    },
+    "user": {
+      "favorite": false,
+      "status": "new",
+      "notes": "Nightly rate is indicative, not fixed: quoted ₱6,453 for 2 nights (Sep 9-11, 2026), all fees included. Airbnb pricing is dynamic and varies by dates/season/length of stay — check the listing directly for a current quote before deciding."
+    }
+  },
+  {
+    "id": "98c617ba-d766-45b3-bb80-217d3f719230",
+    "source": {
+      "platform": "idealista",
+      "url": "https://www.idealista.com/inmueble/25127131/",
+      "captured_at": "2026-08-25T10:27:58.124Z"
+    },
+    "title": "Alquiler de piso en Calle del Reverendo Rafael Ramón Llin, 14",
+    "property_type": "apartment",
+    "location": {
+      "country": "ES",
+      "city": "València",
+      "neighborhood": "Les Tendetes",
+      "building_name": null,
+      "street": "Calle del Reverendo Rafael Ramón Llin"
+    },
+    "bedrooms": 2,
+    "bathrooms": 1,
+    "size_sqm": 70,
+    "floor_level": "3",
+    "furnishing": "fully_furnished",
+    "photos": [
+      "/photos/98c617ba-d766-45b3-bb80-217d3f719230/1.jpg",
+      "/photos/98c617ba-d766-45b3-bb80-217d3f719230/2.jpg",
+      "/photos/98c617ba-d766-45b3-bb80-217d3f719230/3.jpg",
+      "/photos/98c617ba-d766-45b3-bb80-217d3f719230/4.jpg"
+    ],
+    "price": {
+      "amount": 1150,
+      "currency": "EUR",
+      "period": "month",
+      "dues_included": false
+    },
+    "price_per_sqm": 16.43,
+    "payment_terms": {
+      "deposit_months": 1,
+      "advance_months": null,
+      "minimum_lease_months": null
+    },
+    "amenities": [
+      "balcony",
+      "aircon_installed",
+      "kitchen"
+    ],
+    "rules": {
+      "pets_allowed": null
+    },
+    "contact": {
+      "name": "Eduard",
+      "verified": false
+    },
+    "user": {
+      "favorite": false,
+      "status": "new",
+      "notes": null
+    }
+  }
+]
