@@ -43,7 +43,14 @@ export const PRICE_PERIODS = ["month", "night", "week", "year"];
 
 export const FURNISHING = ["unfurnished", "semi_furnished", "fully_furnished"];
 
-export const STATUSES = ["new", "interested", "contacted", "toured", "rejected", "extraction_failed"];
+export const STATUSES = [
+  "new",
+  "interested",
+  "contacted",
+  "toured",
+  "rejected",
+  "extraction_failed",
+];
 
 // A listing isn't finished without at least one real photo — unless capture
 // itself failed, in which case there's nothing to have a photo of, and the
