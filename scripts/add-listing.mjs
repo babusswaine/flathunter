@@ -1,12 +1,11 @@
 #!/usr/bin/env node
 // Validates and appends one extracted listing to data/listings.json.
-// Downloads any given photo URLs and normalizes each to a 16:9 frame
+// Downloads any given photo URLs, normalizes each to a 16:9 WebP frame
 // (upscaling smaller images via high-quality resampling, cropping larger
-// ones) into public/photos/<listing-id>/.
+// ones), and uploads it to Supabase Storage at photos/<listing-id>/.
 // Usage: node scripts/add-listing.mjs '<json>'   (or pipe JSON via stdin)
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
-import sharp from "sharp";
 import vocabulary from "../src/lib/amenity-vocabulary.json" with { type: "json" };
 import {
   assertHasPhotos,
@@ -16,13 +15,11 @@ import {
   PROPERTY_TYPES,
   STATUSES,
 } from "./lib/capture-validation.mjs";
+import { optimizePhoto } from "./lib/image-optimize.mjs";
+import { uploadImage } from "./lib/storage.mjs";
 
 const ROOT = path.join(import.meta.dirname, "..");
 const DATA_PATH = path.join(ROOT, "data", "listings.json");
-const PHOTOS_DIR = path.join(ROOT, "public", "photos");
-
-const PHOTO_WIDTH = 1280;
-const PHOTO_HEIGHT = 720; // 16:9
 
 function fail(msg) {
   console.error(`add-listing: ${msg}`);
@@ -46,17 +43,11 @@ async function processPhoto(url, listingId, index, referer) {
   });
   if (!res.ok) throw new Error(`fetch failed (${res.status}) for ${url}`);
   const buffer = Buffer.from(await res.arrayBuffer());
-
-  const dir = path.join(PHOTOS_DIR, listingId);
-  await mkdir(dir, { recursive: true });
-  const filename = `${index + 1}.jpg`;
-
-  await sharp(buffer)
-    .resize(PHOTO_WIDTH, PHOTO_HEIGHT, { fit: "cover", position: "attention" })
-    .jpeg({ quality: 85 })
-    .toFile(path.join(dir, filename));
-
-  return `/photos/${listingId}/${filename}`;
+  return uploadImage(
+    `photos/${listingId}/${index + 1}.webp`,
+    await optimizePhoto(buffer),
+    "image/webp",
+  );
 }
 
 async function main() {

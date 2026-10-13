@@ -50,7 +50,7 @@ export function ListingBrowser({ initialListings }: { initialListings: Listing[]
         <CityCard
           label="All cities"
           count={listings.length}
-          image="/cities/all-cities.jpg"
+          image="cities/all-cities.webp"
           selected={city === "all"}
           onClick={() => setCity("all")}
         />

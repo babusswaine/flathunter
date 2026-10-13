@@ -6,6 +6,7 @@ import { useState } from "react";
 import { useListing } from "@/hooks/useListing";
 import { amenityLabel } from "@/lib/amenities";
 import { formatCurrency } from "@/lib/format";
+import { imageUrl } from "@/lib/image-url";
 import { ICONIFIED_AMENITY_TAGS } from "@/lib/listing-features";
 import type { Listing } from "@/lib/types";
 import { FavoriteToggle } from "./FavoriteToggle";
@@ -47,7 +48,7 @@ export function ListingDetail({ listing: initial }: { listing: Listing }) {
               className="relative aspect-video overflow-hidden rounded-md bg-zinc-100 dark:bg-zinc-900"
             >
               <Image
-                src={src}
+                src={imageUrl(src)}
                 alt={`${listing.title} photo ${i + 1}`}
                 fill
                 sizes="(min-width: 672px) 203px, (min-width: 640px) 33vw, 50vw"

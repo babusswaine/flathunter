@@ -1,14 +1,15 @@
 #!/usr/bin/env node
-// Downloads a landmark photo for a city, normalizes it to 16:9, and records
-// it in src/lib/city-landmarks.json for the main screen's city cards.
+// Downloads a landmark photo for a city, normalizes it to a 16:9 WebP,
+// uploads it to Supabase Storage at cities/<slug>.webp, and records it in
+// src/lib/city-landmarks.json for the main screen's city cards.
 // Usage: node scripts/add-city-landmark.mjs "Makati" "<image-url>" "Photo by X, CC BY 3.0"
-import { mkdir, readFile, writeFile } from "node:fs/promises";
+import { readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
-import sharp from "sharp";
+import { optimizePhoto } from "./lib/image-optimize.mjs";
+import { uploadImage } from "./lib/storage.mjs";
 
 const ROOT = path.join(import.meta.dirname, "..");
 const META_PATH = path.join(ROOT, "src", "lib", "city-landmarks.json");
-const CITIES_DIR = path.join(ROOT, "public", "cities");
 
 function fail(msg) {
   console.error(`add-city-landmark: ${msg}`);
@@ -34,13 +35,11 @@ const res = await fetch(url, {
   },
 });
 if (!res.ok) fail(`fetch failed (${res.status}) for ${url}`);
-const buffer = Buffer.from(await res.arrayBuffer());
-
-await mkdir(CITIES_DIR, { recursive: true });
-await sharp(buffer)
-  .resize(1280, 720, { fit: "cover", position: "attention" })
-  .jpeg({ quality: 85 })
-  .toFile(path.join(CITIES_DIR, `${slug}.jpg`));
+const image = await uploadImage(
+  `cities/${slug}.webp`,
+  await optimizePhoto(Buffer.from(await res.arrayBuffer())),
+  "image/webp",
+);
 
 let meta = {};
 try {
@@ -48,6 +47,6 @@ try {
 } catch {
   // no existing file yet
 }
-meta[city] = { image: `/cities/${slug}.jpg`, attribution: attribution ?? null };
+meta[city] = { image, attribution: attribution ?? null };
 await writeFile(META_PATH, `${JSON.stringify(meta, null, 2)}\n`);
-console.log(`Saved landmark for "${city}" -> /cities/${slug}.jpg`);
+console.log(`Saved landmark for "${city}" -> ${image}`);
