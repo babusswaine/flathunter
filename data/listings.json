@@ -78,10 +78,10 @@
     "furnishing": "fully_furnished",
     "balcony": true,
     "photos": [
-      "/photos/d1695814-96a1-4a99-bb35-7a41bcf83300/1.jpg",
-      "/photos/d1695814-96a1-4a99-bb35-7a41bcf83300/2.jpg",
-      "/photos/d1695814-96a1-4a99-bb35-7a41bcf83300/3.jpg",
-      "/photos/d1695814-96a1-4a99-bb35-7a41bcf83300/4.jpg"
+      "photos/d1695814-96a1-4a99-bb35-7a41bcf83300/1.webp",
+      "photos/d1695814-96a1-4a99-bb35-7a41bcf83300/2.webp",
+      "photos/d1695814-96a1-4a99-bb35-7a41bcf83300/3.webp",
+      "photos/d1695814-96a1-4a99-bb35-7a41bcf83300/4.webp"
     ],
     "price": {
       "amount": 75000,
@@ -181,10 +181,10 @@
     "furnishing": "fully_furnished",
     "balcony": null,
     "photos": [
-      "/photos/0bcff2e3-5577-4fa6-97da-6e98e0adef59/1.jpg",
-      "/photos/0bcff2e3-5577-4fa6-97da-6e98e0adef59/2.jpg",
-      "/photos/0bcff2e3-5577-4fa6-97da-6e98e0adef59/3.jpg",
-      "/photos/0bcff2e3-5577-4fa6-97da-6e98e0adef59/4.jpg"
+      "photos/0bcff2e3-5577-4fa6-97da-6e98e0adef59/1.webp",
+      "photos/0bcff2e3-5577-4fa6-97da-6e98e0adef59/2.webp",
+      "photos/0bcff2e3-5577-4fa6-97da-6e98e0adef59/3.webp",
+      "photos/0bcff2e3-5577-4fa6-97da-6e98e0adef59/4.webp"
     ],
     "price": {
       "amount": 3226.5,
@@ -235,10 +235,10 @@
     "furnishing": "fully_furnished",
     "balcony": true,
     "photos": [
-      "/photos/98c617ba-d766-45b3-bb80-217d3f719230/1.jpg",
-      "/photos/98c617ba-d766-45b3-bb80-217d3f719230/2.jpg",
-      "/photos/98c617ba-d766-45b3-bb80-217d3f719230/3.jpg",
-      "/photos/98c617ba-d766-45b3-bb80-217d3f719230/4.jpg"
+      "photos/98c617ba-d766-45b3-bb80-217d3f719230/1.webp",
+      "photos/98c617ba-d766-45b3-bb80-217d3f719230/2.webp",
+      "photos/98c617ba-d766-45b3-bb80-217d3f719230/3.webp",
+      "photos/98c617ba-d766-45b3-bb80-217d3f719230/4.webp"
     ],
     "price": {
       "amount": 1150,

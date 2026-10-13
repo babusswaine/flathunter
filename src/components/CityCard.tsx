@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { imageUrl } from "@/lib/image-url";
 
 export function CityCard({
   label,
@@ -30,7 +31,7 @@ export function CityCard({
     >
       {image ? (
         <Image
-          src={image}
+          src={imageUrl(image)}
           alt={label}
           fill
           sizes="(min-width: 896px) 280px, (min-width: 640px) 33vw, 50vw"
@@ -42,9 +43,9 @@ export function CityCard({
       <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-transparent" />
       {country && (
         <span className="absolute right-2 top-2 h-4 w-6 overflow-hidden rounded-sm shadow">
-          {/* biome-ignore lint/performance/noImgElement: tiny local SVG, not worth next/image's optimizer pipeline */}
+          {/* biome-ignore lint/performance/noImgElement: tiny SVG flag — next/image doesn't optimize SVGs anyway */}
           <img
-            src={`/flags/${country.toLowerCase()}.svg`}
+            src={imageUrl(`flags/${country.toLowerCase()}.svg`)}
             alt={country}
             className="h-full w-full object-cover"
           />

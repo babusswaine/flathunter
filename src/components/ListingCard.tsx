@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { formatAddress, formatCurrency } from "@/lib/format";
+import { imageUrl } from "@/lib/image-url";
 import type { Listing, ListingStatus } from "@/lib/types";
 import { FavoriteToggle } from "./FavoriteToggle";
 import { BedIcons, FeatureIcons } from "./ListingFeatures";
@@ -24,7 +25,7 @@ export function ListingCard({
       <div className="relative aspect-video w-full bg-zinc-100 dark:bg-zinc-900">
         {listing.photos[0] ? (
           <Image
-            src={listing.photos[0]}
+            src={imageUrl(listing.photos[0])}
             alt={listing.title}
             fill
             sizes="(min-width: 896px) 424px, (min-width: 640px) 50vw, 100vw"

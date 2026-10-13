@@ -1,12 +1,9 @@
 #!/usr/bin/env node
-// Downloads a country's flag SVG from lipis/flag-icons (MIT-licensed) into
-// public/flags/, keyed by lowercase ISO 3166-1 alpha-2 code.
+// Downloads a country's flag SVG from lipis/flag-icons (MIT-licensed) and
+// uploads it to Supabase Storage at flags/<code>.svg, keyed by lowercase
+// ISO 3166-1 alpha-2 code. SVGs are already tiny, so they're stored as-is.
 // Usage: node scripts/add-country-flag.mjs <ISO country code, e.g. PH>
-import { mkdir, writeFile } from "node:fs/promises";
-import path from "node:path";
-
-const ROOT = path.join(import.meta.dirname, "..");
-const FLAGS_DIR = path.join(ROOT, "public", "flags");
+import { uploadImage } from "./lib/storage.mjs";
 
 function fail(msg) {
   console.error(`add-country-flag: ${msg}`);
@@ -23,8 +20,7 @@ const url = `https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/$
 
 const res = await fetch(url);
 if (!res.ok) fail(`fetch failed (${res.status}) for ${url} — is "${code}" a valid ISO code?`);
-const svg = await res.text();
+const svg = Buffer.from(await res.arrayBuffer());
 
-await mkdir(FLAGS_DIR, { recursive: true });
-await writeFile(path.join(FLAGS_DIR, `${lower}.svg`), svg);
-console.log(`Saved flag for "${code.toUpperCase()}" -> /flags/${lower}.svg`);
+const objectPath = await uploadImage(`flags/${lower}.svg`, svg, "image/svg+xml");
+console.log(`Saved flag for "${code.toUpperCase()}" -> ${objectPath}`);

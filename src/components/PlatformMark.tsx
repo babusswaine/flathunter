@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { imageUrl } from "@/lib/image-url";
 import { getPlatformMark } from "@/lib/platform-marks";
 import type { Platform } from "@/lib/types";
 
@@ -37,7 +38,7 @@ export function PlatformMark({ platform }: { platform: Platform }) {
   if (mark) {
     return (
       <Image
-        src={mark.image}
+        src={imageUrl(mark.image)}
         alt={PLATFORM_LABELS[platform]}
         width={mark.width}
         height={mark.height}
