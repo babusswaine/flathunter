@@ -83,7 +83,7 @@ export function ListingDetail({ listing: initial }: { listing: Listing }) {
         />
         <Field label="Building" value={listing.location.building_name} />
         <Field label="Street" value={listing.location.street} />
-        <Field label="Property type" value={listing.property_type} />
+        <Field label="Property type" value={listing.property_type.replace(/_/g, " ")} />
         <Field label="Bedrooms" value={<BedIcons count={listing.bedrooms} />} />
         <Field label="Bathrooms" value={listing.bathrooms} />
         <Field label="Size" value={listing.size_sqm !== null ? `${listing.size_sqm} m²` : null} />

@@ -8,24 +8,18 @@ import { mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import sharp from "sharp";
 import vocabulary from "../src/lib/amenity-vocabulary.json" with { type: "json" };
+import {
+  assertHasPhotos,
+  FURNISHING,
+  PLATFORMS,
+  PRICE_PERIODS,
+  PROPERTY_TYPES,
+  STATUSES,
+} from "./lib/capture-validation.mjs";
 
 const ROOT = path.join(import.meta.dirname, "..");
 const DATA_PATH = path.join(ROOT, "data", "listings.json");
 const PHOTOS_DIR = path.join(ROOT, "public", "photos");
-
-const PLATFORMS = [
-  "dotproperty",
-  "lamudi",
-  "rentpad",
-  "fb_marketplace",
-  "fb_group",
-  "airbnb",
-  "idealista",
-  "other",
-];
-const PROPERTY_TYPES = ["condo", "apartment", "house", "studio"];
-const FURNISHING = ["unfurnished", "semi_furnished", "fully_furnished"];
-const STATUSES = ["new", "interested", "contacted", "toured", "rejected", "extraction_failed"];
 
 const PHOTO_WIDTH = 1280;
 const PHOTO_HEIGHT = 720; // 16:9
@@ -104,6 +98,8 @@ async function main() {
         'so use the specific area (e.g. "Legazpi Village"), not just the city',
     );
   if (input.price?.amount === undefined) fail("price.amount is required");
+  if (input.price?.period !== undefined && !PRICE_PERIODS.includes(input.price.period))
+    fail(`price.period must be one of ${PRICE_PERIODS.join(", ")}`);
 
   const amenities = input.amenities ?? [];
   const unknown = amenities.filter((tag) => !vocabulary.includes(tag));
@@ -126,6 +122,12 @@ async function main() {
     } catch (e) {
       console.error(`add-listing: warning — skipped photo ${photoUrls[i]}: ${e.message}`);
     }
+  }
+
+  try {
+    assertHasPhotos(photos, status);
+  } catch (e) {
+    fail(e.message);
   }
 
   const sizeSqm = input.size_sqm ?? null;
