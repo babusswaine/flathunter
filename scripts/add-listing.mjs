@@ -15,8 +15,7 @@ import {
   PROPERTY_TYPES,
   STATUSES,
 } from "./lib/capture-validation.mjs";
-import { optimizePhoto } from "./lib/image-optimize.mjs";
-import { uploadImage } from "./lib/storage.mjs";
+import { capturePhoto } from "./lib/photos.mjs";
 
 const ROOT = path.join(import.meta.dirname, "..");
 const DATA_PATH = path.join(ROOT, "data", "listings.json");
@@ -31,23 +30,6 @@ async function readStdin() {
   const chunks = [];
   for await (const chunk of process.stdin) chunks.push(chunk);
   return Buffer.concat(chunks).toString("utf-8").trim();
-}
-
-async function processPhoto(url, listingId, index, referer) {
-  const res = await fetch(url, {
-    headers: {
-      "User-Agent":
-        "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36",
-      ...(referer ? { Referer: referer } : {}),
-    },
-  });
-  if (!res.ok) throw new Error(`fetch failed (${res.status}) for ${url}`);
-  const buffer = Buffer.from(await res.arrayBuffer());
-  return uploadImage(
-    `photos/${listingId}/${index + 1}.webp`,
-    await optimizePhoto(buffer),
-    "image/webp",
-  );
 }
 
 async function main() {
@@ -111,7 +93,7 @@ async function main() {
   const photos = [];
   for (let i = 0; i < photoUrls.length; i++) {
     try {
-      photos.push(await processPhoto(photoUrls[i], id, i, input.source.url));
+      photos.push(await capturePhoto(photoUrls[i], id, i, input.source.url));
     } catch (e) {
       console.error(`add-listing: warning — skipped photo ${photoUrls[i]}: ${e.message}`);
     }
