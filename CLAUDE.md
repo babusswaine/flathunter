@@ -37,10 +37,10 @@ When the user pastes a rental listing URL in this session:
    headshots) and pass them as `photos: ["url", ...]` in the input.
 4. Run `node scripts/add-listing.mjs '<json>'` with the extracted object (see the
    script for the exact required shape). It validates, fills in `id`/`captured_at`/
-   `price_per_sqm`, downloads and normalizes each photo to a 16:9 frame under
-   `public/photos/<id>/` (upscaling smaller images via high-quality resampling, not
-   AI super-resolution — that's a future option if an upscaling API key gets added),
-   and appends to `data/listings.json`.
+   `price_per_sqm`, downloads and normalizes each photo to a 16:9 WebP frame and
+   uploads it to Supabase Storage at `photos/<id>/` (upscaling smaller images via
+   high-quality resampling, not AI super-resolution — that's a future option if an
+   upscaling API key gets added), and appends to `data/listings.json`.
 5. If extraction fails and no browser-driven retry has been attempted yet, still add
    the listing with `user.status: "extraction_failed"` rather than dropping it.
 
@@ -62,9 +62,9 @@ is fine in that case, as it is for Airbnb currently) and run:
 
 `node scripts/add-platform-mark.mjs <platform> "<image-url>"`
 
-It downloads the image, normalizes it to a max width (no crop — logos keep their
-own aspect ratio, unlike photos/landmarks), saves it under `public/platforms/`,
-and records it in `src/lib/platform-marks.json`.
+It downloads the image, normalizes it to a max-width WebP (no crop — logos keep their
+own aspect ratio, unlike photos/landmarks), uploads it to Supabase Storage at
+`platforms/<platform>.webp`, and records it in `src/lib/platform-marks.json`.
 
 ## Adding a city landmark
 
@@ -75,7 +75,15 @@ the file's license/attribution on its description page) and run:
 
 `node scripts/add-city-landmark.mjs "City Name" "<image-url>" "<attribution text>"`
 
-It downloads the photo, normalizes it to 16:9, saves it under `public/cities/`, and
-records the city → image mapping (plus attribution, shown as a hover tooltip on the
-card) in `src/lib/city-landmarks.json`. A city without an entry still works — its
-card just renders as a plain color block instead of a photo.
+It downloads the photo, normalizes it to a 16:9 WebP, uploads it to Supabase Storage
+at `cities/<slug>.webp`, and records the city → image mapping (plus attribution,
+shown as a hover tooltip on the card) in `src/lib/city-landmarks.json`. A city
+without an entry still works — its card just renders as a plain color block
+instead of a photo.
+
+## Images
+
+Every image lives in the public `images` bucket in Supabase Storage, not under
+`public/` (see `docs/adr/0004-images-in-supabase-storage.md`). The upload scripts
+above need `NEXT_PUBLIC_SUPABASE_URL` and `SUPABASE_SECRET_KEY` in `.env.local`
+(gitignored — never commit it or print the secret key).
