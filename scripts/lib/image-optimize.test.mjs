@@ -21,6 +21,38 @@ describe("optimizePhoto", () => {
     expect(meta).toMatchObject({ format: "webp", width: 1280, height: 720 });
   });
 
+  it("honors the EXIF orientation tag instead of leaving phone photos sideways", async () => {
+    // Stored as a landscape image (red left half, blue right half) tagged
+    // "rotate 90° clockwise", so it should display as a portrait with red on
+    // top and blue below. Any row of the upright result is a single color;
+    // a sideways result would be red on the left and blue on the right.
+    const half = (r, b) =>
+      sharp({ create: { width: 200, height: 200, channels: 3, background: { r, g: 0, b } } })
+        .png()
+        .toBuffer();
+    const stored = await sharp({
+      create: { width: 400, height: 200, channels: 3, background: "#000" },
+    })
+      .composite([
+        { input: await half(255, 0), left: 0, top: 0 },
+        { input: await half(0, 255), left: 200, top: 0 },
+      ])
+      .jpeg()
+      .withMetadata({ orientation: 6 })
+      .toBuffer();
+
+    const { data, info } = await sharp(await optimizePhoto(stored))
+      .raw()
+      .toBuffer({ resolveWithObject: true });
+    const pixel = (x, y) => [
+      ...data.subarray((y * info.width + x) * 3, (y * info.width + x) * 3 + 3),
+    ];
+    const row = Math.floor(info.height / 2);
+    const [left, right] = [pixel(20, row), pixel(info.width - 20, row)];
+    expect(Math.abs(left[0] - right[0])).toBeLessThan(40);
+    expect(Math.abs(left[2] - right[2])).toBeLessThan(40);
+  });
+
   it("enlarges a small photo to the same 16:9 frame", async () => {
     const meta = await sharp(await optimizePhoto(await solid(400, 300))).metadata();
     expect(meta).toMatchObject({ format: "webp", width: 1280, height: 720 });

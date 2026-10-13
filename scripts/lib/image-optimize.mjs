@@ -7,8 +7,11 @@ export const PHOTO_WIDTH = 1280;
 export const PHOTO_HEIGHT = 720;
 export const LOGO_MAX_WIDTH = 320;
 
+// .rotate() with no angle applies the EXIF orientation tag first — phone
+// photos are often stored sideways with only a "rotate me" tag.
 export async function optimizePhoto(input) {
   return sharp(input)
+    .rotate()
     .resize(PHOTO_WIDTH, PHOTO_HEIGHT, { fit: "cover", position: "attention" })
     .webp({ quality: 80 })
     .toBuffer();
