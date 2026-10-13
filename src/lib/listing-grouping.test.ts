@@ -27,6 +27,7 @@ function listing(overrides: Partial<Listing> = {}): Listing {
     size_sqm: 50,
     floor_level: null,
     furnishing: "fully_furnished",
+    balcony: null,
     photos: [],
     price: { amount: 50000, currency: "PHP", period: "month", dues_included: false },
     price_per_sqm: 1000,

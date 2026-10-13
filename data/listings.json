@@ -20,6 +20,7 @@
     "size_sqm": 98,
     "floor_level": null,
     "furnishing": "fully_furnished",
+    "balcony": null,
     "photos": [],
     "price": {
       "amount": 90000,
@@ -75,6 +76,7 @@
     "size_sqm": 118,
     "floor_level": null,
     "furnishing": "fully_furnished",
+    "balcony": true,
     "photos": [
       "/photos/d1695814-96a1-4a99-bb35-7a41bcf83300/1.jpg",
       "/photos/d1695814-96a1-4a99-bb35-7a41bcf83300/2.jpg",
@@ -93,7 +95,7 @@
       "advance_months": null,
       "minimum_lease_months": 12
     },
-    "amenities": ["24h_security", "balcony"],
+    "amenities": ["24h_security"],
     "rules": {
       "pets_allowed": null
     },
@@ -128,6 +130,7 @@
     "size_sqm": 214,
     "floor_level": "3",
     "furnishing": "unfurnished",
+    "balcony": true,
     "photos": [],
     "price": {
       "amount": 2600,
@@ -141,7 +144,7 @@
       "advance_months": null,
       "minimum_lease_months": null
     },
-    "amenities": ["balcony"],
+    "amenities": [],
     "rules": {
       "pets_allowed": false
     },
@@ -176,6 +179,7 @@
     "size_sqm": null,
     "floor_level": null,
     "furnishing": "fully_furnished",
+    "balcony": null,
     "photos": [
       "/photos/0bcff2e3-5577-4fa6-97da-6e98e0adef59/1.jpg",
       "/photos/0bcff2e3-5577-4fa6-97da-6e98e0adef59/2.jpg",
@@ -229,6 +233,7 @@
     "size_sqm": 70,
     "floor_level": "3",
     "furnishing": "fully_furnished",
+    "balcony": true,
     "photos": [
       "/photos/98c617ba-d766-45b3-bb80-217d3f719230/1.jpg",
       "/photos/98c617ba-d766-45b3-bb80-217d3f719230/2.jpg",
@@ -247,7 +252,7 @@
       "advance_months": null,
       "minimum_lease_months": null
     },
-    "amenities": ["balcony", "aircon_installed", "kitchen"],
+    "amenities": ["aircon_installed", "kitchen"],
     "rules": {
       "pets_allowed": null
     },
@@ -259,6 +264,986 @@
       "favorite": false,
       "status": "new",
       "notes": null
+    }
+  },
+  {
+    "id": "L01",
+    "source": {
+      "platform": "trovit",
+      "url": "https://homes.trovit.ph/detail/0196615b-6fa2-7ffa-a4c0-f003395e9099",
+      "captured_at": "2026-10-12T00:00:00.000Z"
+    },
+    "title": "1BR in Salcedo Square (Vista Residences)",
+    "property_type": "condo",
+    "location": {
+      "country": "PH",
+      "city": "Makati",
+      "neighborhood": "Salcedo Village",
+      "building_name": "Salcedo Square (Vista Residences)",
+      "street": "L.P. Leviste St"
+    },
+    "bedrooms": 1,
+    "bathrooms": 1,
+    "size_sqm": 25.5,
+    "floor_level": null,
+    "furnishing": "fully_furnished",
+    "balcony": null,
+    "photos": [],
+    "price": {
+      "amount": 22500,
+      "currency": "PHP",
+      "period": "month",
+      "dues_included": true
+    },
+    "price_per_sqm": 882.35,
+    "payment_terms": {
+      "advance_months": null,
+      "deposit_months": null,
+      "minimum_lease_months": null
+    },
+    "amenities": [],
+    "rules": {
+      "pets_allowed": null
+    },
+    "contact": {
+      "name": "Firm Realty",
+      "verified": false
+    },
+    "user": {
+      "favorite": false,
+      "status": "new",
+      "notes": "Studio-sized for a 1BR; confirm bedroom door + balcony. 17 photos.\nHandoff tag: ask_agent\nNegotiable\nAgent ref: FRM-L-013"
+    }
+  },
+  {
+    "id": "L02",
+    "source": {
+      "platform": "trovit",
+      "url": "https://homes.trovit.ph/detail/019c4be1-cb4e-70bf-9668-4e4cfb89c846",
+      "captured_at": "2026-10-12T00:00:00.000Z"
+    },
+    "title": "1BR in One Salcedo Square",
+    "property_type": "condo",
+    "location": {
+      "country": "PH",
+      "city": "Makati",
+      "neighborhood": "Salcedo Village",
+      "building_name": "One Salcedo Square",
+      "street": "San Agustin St"
+    },
+    "bedrooms": 1,
+    "bathrooms": 1,
+    "size_sqm": null,
+    "floor_level": null,
+    "furnishing": "fully_furnished",
+    "balcony": null,
+    "photos": [],
+    "price": {
+      "amount": 27000,
+      "currency": "PHP",
+      "period": "month",
+      "dues_included": true
+    },
+    "price_per_sqm": null,
+    "payment_terms": {
+      "advance_months": 2,
+      "deposit_months": 2,
+      "minimum_lease_months": null
+    },
+    "amenities": [],
+    "rules": {
+      "pets_allowed": null
+    },
+    "contact": {
+      "name": "La THEOZ Real Estate Solution Services, Inc.",
+      "verified": false
+    },
+    "user": {
+      "favorite": false,
+      "status": "new",
+      "notes": "Photo shows glass sliding door — balcony unconfirmed.\nHandoff tag: over_budget\nAgent ref: 6091\nTerms: 2 mo deposit + 2 mo advance + 10 PDCs"
+    }
+  },
+  {
+    "id": "L03",
+    "source": {
+      "platform": "trovit",
+      "url": "https://homes.trovit.ph/detail/019eb236-3ff0-7732-b81e-4c65e317fe3c",
+      "captured_at": "2026-10-12T00:00:00.000Z"
+    },
+    "title": "1BR in Signa Designer Residences",
+    "property_type": "condo",
+    "location": {
+      "country": "PH",
+      "city": "Makati",
+      "neighborhood": "Salcedo Village",
+      "building_name": "Signa Designer Residences",
+      "street": "Valero St cor. V.A. Rufino St"
+    },
+    "bedrooms": 1,
+    "bathrooms": 1,
+    "size_sqm": 36,
+    "floor_level": "9",
+    "furnishing": "fully_furnished",
+    "balcony": true,
+    "photos": [],
+    "price": {
+      "amount": 28000,
+      "currency": "PHP",
+      "period": "month",
+      "dues_included": null
+    },
+    "price_per_sqm": 777.78,
+    "payment_terms": {
+      "advance_months": null,
+      "deposit_months": null,
+      "minimum_lease_months": null
+    },
+    "amenities": [],
+    "rules": {
+      "pets_allowed": null
+    },
+    "contact": {
+      "name": "Maria Regina Gaces",
+      "verified": false
+    },
+    "user": {
+      "favorite": false,
+      "status": "new",
+      "notes": "Header ₱28k, description ₱30k. Built 2014.\nHandoff tag: over_budget\nPossible duplicate of L04\nAgent ref: 152"
+    }
+  },
+  {
+    "id": "L04",
+    "source": {
+      "platform": "trovit",
+      "url": "https://homes.trovit.ph/detail/019fa80a-08c9-761b-bb02-d4d1ee3d7c36",
+      "captured_at": "2026-10-12T00:00:00.000Z"
+    },
+    "title": "1BR in Signa Designer Residences",
+    "property_type": "condo",
+    "location": {
+      "country": "PH",
+      "city": "Makati",
+      "neighborhood": "Salcedo Village",
+      "building_name": "Signa Designer Residences",
+      "street": "Valero St cor. V.A. Rufino St"
+    },
+    "bedrooms": 1,
+    "bathrooms": 1,
+    "size_sqm": 36,
+    "floor_level": "9",
+    "furnishing": "fully_furnished",
+    "balcony": true,
+    "photos": [],
+    "price": {
+      "amount": 27000,
+      "currency": "PHP",
+      "period": "month",
+      "dues_included": true
+    },
+    "price_per_sqm": 750,
+    "payment_terms": {
+      "advance_months": 1,
+      "deposit_months": 2,
+      "minimum_lease_months": 12
+    },
+    "amenities": ["parking_slot"],
+    "rules": {
+      "pets_allowed": null
+    },
+    "contact": {
+      "name": "JNP Real Estate Corp.",
+      "verified": false
+    },
+    "user": {
+      "favorite": false,
+      "status": "new",
+      "notes": "Cheapest confirmed 1BR+balcony in target areas. Ready for move-in, up to 3 occupants, parking. Header says ₱28k. Negotiate ₱2k down.\nHandoff tag: closest_to_budget\nPossible duplicate of L03\nAgent ref: 123\nTerms: 1 mo advance + 2 mo deposit, 1-yr renewable"
+    }
+  },
+  {
+    "id": "L05",
+    "source": {
+      "platform": "trovit",
+      "url": "https://homes.trovit.ph/detail/019f2a3c-6717-74de-95e3-930fc55747d5",
+      "captured_at": "2026-10-12T00:00:00.000Z"
+    },
+    "title": "1BR in BSA Suites",
+    "property_type": "condo",
+    "location": {
+      "country": "PH",
+      "city": "Makati",
+      "neighborhood": "Legazpi Village",
+      "building_name": "BSA Suites",
+      "street": "Legazpi St"
+    },
+    "bedrooms": 1,
+    "bathrooms": 1,
+    "size_sqm": 44,
+    "floor_level": "10",
+    "furnishing": "fully_furnished",
+    "balcony": true,
+    "photos": [],
+    "price": {
+      "amount": 35000,
+      "currency": "PHP",
+      "period": "month",
+      "dues_included": true
+    },
+    "price_per_sqm": 795.45,
+    "payment_terms": {
+      "advance_months": 1,
+      "deposit_months": null,
+      "minimum_lease_months": null
+    },
+    "amenities": ["parking_slot", "wifi_included"],
+    "rules": {
+      "pets_allowed": false
+    },
+    "contact": {
+      "name": "",
+      "verified": false
+    },
+    "user": {
+      "favorite": false,
+      "status": "new",
+      "notes": "All-in: dues + parking + high-speed Wi-Fi. No pets.\nHandoff tag: over_budget\nPossible duplicate of L06\nTerms: 1 mo advance"
+    }
+  },
+  {
+    "id": "L06",
+    "source": {
+      "platform": "trovit",
+      "url": "https://homes.trovit.ph/detail/019dd819-7472-74a2-8786-0e43a13dbb88",
+      "captured_at": "2026-10-12T00:00:00.000Z"
+    },
+    "title": "1BR in BSA Suites",
+    "property_type": "condo",
+    "location": {
+      "country": "PH",
+      "city": "Makati",
+      "neighborhood": "Legazpi Village",
+      "building_name": "BSA Suites",
+      "street": "Legazpi St"
+    },
+    "bedrooms": 1,
+    "bathrooms": 1,
+    "size_sqm": 44.2,
+    "floor_level": "10",
+    "furnishing": "fully_furnished",
+    "balcony": true,
+    "photos": [],
+    "price": {
+      "amount": 32000,
+      "currency": "PHP",
+      "period": "month",
+      "dues_included": true
+    },
+    "price_per_sqm": 723.98,
+    "payment_terms": {
+      "advance_months": null,
+      "deposit_months": null,
+      "minimum_lease_months": null
+    },
+    "amenities": [],
+    "rules": {
+      "pets_allowed": null
+    },
+    "contact": {
+      "name": "",
+      "verified": false
+    },
+    "user": {
+      "favorite": false,
+      "status": "new",
+      "notes": "Balcony off bedroom. 1-yr min.\nHandoff tag: over_budget\nPossible duplicate of L05"
+    }
+  },
+  {
+    "id": "L07",
+    "source": {
+      "platform": "lamudi",
+      "url": "https://www.lamudi.com.ph/property/41032-73-edd4e6ffe9a2-6d8e-1a0dd2c-a744-7539",
+      "captured_at": "2026-10-12T00:00:00.000Z"
+    },
+    "title": "1BR in Grand Midori",
+    "property_type": "condo",
+    "location": {
+      "country": "PH",
+      "city": "Makati",
+      "neighborhood": "Legazpi Village",
+      "building_name": "Grand Midori",
+      "street": "Legazpi St"
+    },
+    "bedrooms": 1,
+    "bathrooms": 1,
+    "size_sqm": 36,
+    "floor_level": null,
+    "furnishing": "fully_furnished",
+    "balcony": true,
+    "photos": [],
+    "price": {
+      "amount": 28000,
+      "currency": "PHP",
+      "period": "month",
+      "dues_included": true
+    },
+    "price_per_sqm": 777.78,
+    "payment_terms": {
+      "advance_months": 1,
+      "deposit_months": 2,
+      "minimum_lease_months": null
+    },
+    "amenities": [],
+    "rules": {
+      "pets_allowed": null
+    },
+    "contact": {
+      "name": "Maria Crist",
+      "verified": false
+    },
+    "user": {
+      "favorite": false,
+      "status": "new",
+      "notes": "Posted ~late Sep 2026.\nHandoff tag: over_budget\nTerms: 2 mo deposit + 1 mo advance"
+    }
+  },
+  {
+    "id": "L08",
+    "source": {
+      "platform": "lamudi",
+      "url": "https://www.lamudi.com.ph/property/41032-73-481cee0716-5c03-19fb678-830f-71f9",
+      "captured_at": "2026-10-12T00:00:00.000Z"
+    },
+    "title": "1BR in Grand Midori",
+    "property_type": "condo",
+    "location": {
+      "country": "PH",
+      "city": "Makati",
+      "neighborhood": "Legazpi Village",
+      "building_name": "Grand Midori",
+      "street": "Legazpi St"
+    },
+    "bedrooms": 1,
+    "bathrooms": 1,
+    "size_sqm": 36,
+    "floor_level": "17",
+    "furnishing": null,
+    "balcony": true,
+    "photos": [],
+    "price": {
+      "amount": 30000,
+      "currency": "PHP",
+      "period": "month",
+      "dues_included": null
+    },
+    "price_per_sqm": 833.33,
+    "payment_terms": {
+      "advance_months": null,
+      "deposit_months": null,
+      "minimum_lease_months": null
+    },
+    "amenities": [],
+    "rules": {
+      "pets_allowed": null
+    },
+    "contact": {
+      "name": "Eva Marzan",
+      "verified": false
+    },
+    "user": {
+      "favorite": false,
+      "status": "new",
+      "notes": "Wi-Fi ticked in amenities — unconfirmed. Posted 31 Jul 2026.\nHandoff tag: over_budget"
+    }
+  },
+  {
+    "id": "L09",
+    "source": {
+      "platform": "trovit",
+      "url": "https://homes.trovit.ph/detail/019f6508-005c-73ba-a7aa-6976ab7a758a",
+      "captured_at": "2026-10-12T00:00:00.000Z"
+    },
+    "title": "1BR in Grand Midori",
+    "property_type": "condo",
+    "location": {
+      "country": "PH",
+      "city": "Makati",
+      "neighborhood": "Legazpi Village",
+      "building_name": "Grand Midori",
+      "street": "Legazpi St"
+    },
+    "bedrooms": 1,
+    "bathrooms": 1,
+    "size_sqm": 39,
+    "floor_level": "25",
+    "furnishing": null,
+    "balcony": true,
+    "photos": [],
+    "price": {
+      "amount": 33000,
+      "currency": "PHP",
+      "period": "month",
+      "dues_included": true
+    },
+    "price_per_sqm": 846.15,
+    "payment_terms": {
+      "advance_months": 1,
+      "deposit_months": 2,
+      "minimum_lease_months": null
+    },
+    "amenities": [],
+    "rules": {
+      "pets_allowed": null
+    },
+    "contact": {
+      "name": "",
+      "verified": false
+    },
+    "user": {
+      "favorite": false,
+      "status": "new",
+      "notes": "Handoff tag: over_budget\nTerms: 1 mo advance + 2 mo deposit"
+    }
+  },
+  {
+    "id": "L10",
+    "source": {
+      "platform": "lamudi",
+      "url": "https://www.lamudi.com.ph/property/41032-73-c044ee62ba95-e04f-1a0f712-ac1f-73d8",
+      "captured_at": "2026-10-12T00:00:00.000Z"
+    },
+    "title": "1BR in Signa Designer Residences",
+    "property_type": "condo",
+    "location": {
+      "country": "PH",
+      "city": "Makati",
+      "neighborhood": "Salcedo Village",
+      "building_name": "Signa Designer Residences",
+      "street": "Valero St cor. V.A. Rufino St"
+    },
+    "bedrooms": 1,
+    "bathrooms": 1,
+    "size_sqm": 45,
+    "floor_level": "14",
+    "furnishing": "semi_furnished",
+    "balcony": true,
+    "photos": [],
+    "price": {
+      "amount": 30000,
+      "currency": "PHP",
+      "period": "month",
+      "dues_included": true
+    },
+    "price_per_sqm": 666.67,
+    "payment_terms": {
+      "advance_months": 1,
+      "deposit_months": 2,
+      "minimum_lease_months": null
+    },
+    "amenities": [],
+    "rules": {
+      "pets_allowed": null
+    },
+    "contact": {
+      "name": "Jen Ferrer Ramirez",
+      "verified": false
+    },
+    "user": {
+      "favorite": false,
+      "status": "new",
+      "notes": "Posted ~early Oct 2026.\nHandoff tag: over_budget\nTerms: 2 mo deposit + 1 mo advance + 11 PDCs"
+    }
+  },
+  {
+    "id": "L11",
+    "source": {
+      "platform": "lamudi",
+      "url": "https://www.lamudi.com.ph/property/41032-73-64bada5661f0-411d-196fbe8-832f-79da",
+      "captured_at": "2026-10-12T00:00:00.000Z"
+    },
+    "title": "1BR in Signa Designer Residences",
+    "property_type": "condo",
+    "location": {
+      "country": "PH",
+      "city": "Makati",
+      "neighborhood": "Salcedo Village",
+      "building_name": "Signa Designer Residences",
+      "street": "Valero St cor. V.A. Rufino St"
+    },
+    "bedrooms": 1,
+    "bathrooms": 1,
+    "size_sqm": 42.9,
+    "floor_level": "6",
+    "furnishing": "fully_furnished",
+    "balcony": true,
+    "photos": [],
+    "price": {
+      "amount": 30000,
+      "currency": "PHP",
+      "period": "month",
+      "dues_included": true
+    },
+    "price_per_sqm": 699.3,
+    "payment_terms": {
+      "advance_months": null,
+      "deposit_months": null,
+      "minimum_lease_months": null
+    },
+    "amenities": [],
+    "rules": {
+      "pets_allowed": null
+    },
+    "contact": {
+      "name": "Kondo Ko",
+      "verified": false
+    },
+    "user": {
+      "favorite": false,
+      "status": "new",
+      "notes": "Posted May 2025 — may be stale.\nHandoff tag: over_budget"
+    }
+  },
+  {
+    "id": "L12",
+    "source": {
+      "platform": "lamudi",
+      "url": "https://www.lamudi.com.ph/property/41032-73-8d64a2f9b6b1-bb89-19e9b5e-af52-7603",
+      "captured_at": "2026-10-12T00:00:00.000Z"
+    },
+    "title": "1BR on Sedeño St",
+    "property_type": "condo",
+    "location": {
+      "country": "PH",
+      "city": "Makati",
+      "neighborhood": "Salcedo Village",
+      "building_name": null,
+      "street": "Sedeño St"
+    },
+    "bedrooms": 1,
+    "bathrooms": 1,
+    "size_sqm": 39,
+    "floor_level": "25",
+    "furnishing": null,
+    "balcony": null,
+    "photos": [],
+    "price": {
+      "amount": 33000,
+      "currency": "PHP",
+      "period": "month",
+      "dues_included": null
+    },
+    "price_per_sqm": 846.15,
+    "payment_terms": {
+      "advance_months": null,
+      "deposit_months": null,
+      "minimum_lease_months": null
+    },
+    "amenities": [],
+    "rules": {
+      "pets_allowed": null
+    },
+    "contact": {
+      "name": "Prosperland",
+      "verified": false
+    },
+    "user": {
+      "favorite": false,
+      "status": "new",
+      "notes": "Balcony only ticked in amenities.\nHandoff tag: over_budget"
+    }
+  },
+  {
+    "id": "L13",
+    "source": {
+      "platform": "lamudi",
+      "url": "https://www.lamudi.com.ph/property/41032-73-9d84b81018c5-c436-ed8cff19-910a-1237",
+      "captured_at": "2026-10-12T00:00:00.000Z"
+    },
+    "title": "1BR in BSA Mansion",
+    "property_type": "condo",
+    "location": {
+      "country": "PH",
+      "city": "Makati",
+      "neighborhood": "Legazpi Village",
+      "building_name": "BSA Mansion",
+      "street": "Benavidez St"
+    },
+    "bedrooms": 1,
+    "bathrooms": 1,
+    "size_sqm": 59,
+    "floor_level": "4",
+    "furnishing": "semi_furnished",
+    "balcony": true,
+    "photos": [],
+    "price": {
+      "amount": 30000,
+      "currency": "PHP",
+      "period": "month",
+      "dues_included": true
+    },
+    "price_per_sqm": 508.47,
+    "payment_terms": {
+      "advance_months": null,
+      "deposit_months": null,
+      "minimum_lease_months": null
+    },
+    "amenities": [],
+    "rules": {
+      "pets_allowed": null
+    },
+    "contact": {
+      "name": "Realiable Properties",
+      "verified": false
+    },
+    "user": {
+      "favorite": false,
+      "status": "new",
+      "notes": "Posted Feb 2024 — likely stale.\nHandoff tag: over_budget"
+    }
+  },
+  {
+    "id": "L14",
+    "source": {
+      "platform": "trovit",
+      "url": "https://homes.trovit.ph/detail/0198bb7d-34f7-708a-baef-3264841c2dac",
+      "captured_at": "2026-10-13T00:00:00.000Z"
+    },
+    "title": "1BR in Jazz Residences Tower B",
+    "property_type": "condo",
+    "location": {
+      "country": "PH",
+      "city": "Makati",
+      "neighborhood": "Bel-Air (edge of Salcedo)",
+      "building_name": "Jazz Residences Tower B",
+      "street": "Jupiter St / Makati Ave"
+    },
+    "bedrooms": 1,
+    "bathrooms": 1,
+    "size_sqm": 28,
+    "floor_level": null,
+    "furnishing": "fully_furnished",
+    "balcony": true,
+    "photos": [],
+    "price": {
+      "amount": 20000,
+      "currency": "PHP",
+      "period": "month",
+      "dues_included": null
+    },
+    "price_per_sqm": 714.29,
+    "payment_terms": {
+      "advance_months": null,
+      "deposit_months": null,
+      "minimum_lease_months": null
+    },
+    "amenities": [],
+    "rules": {
+      "pets_allowed": null
+    },
+    "contact": {
+      "name": "Veron Magtibay",
+      "verified": false
+    },
+    "user": {
+      "favorite": false,
+      "status": "new",
+      "notes": "Just outside target area. 28 sqm — confirm separate bedroom (Jazz studios ~25 sqm). No parking.\nHandoff tag: ask_agent"
+    }
+  },
+  {
+    "id": "L15",
+    "source": {
+      "platform": "trovit",
+      "url": "https://homes.trovit.ph/detail/019d0e13-03fb-73d8-b0b3-2735bcacbf39",
+      "captured_at": "2026-10-13T00:00:00.000Z"
+    },
+    "title": "1BR in Greenbelt Chancellor",
+    "property_type": "condo",
+    "location": {
+      "country": "PH",
+      "city": "Makati",
+      "neighborhood": "Legazpi Village",
+      "building_name": "Greenbelt Chancellor",
+      "street": "Castro St"
+    },
+    "bedrooms": 1,
+    "bathrooms": 1,
+    "size_sqm": 36,
+    "floor_level": null,
+    "furnishing": null,
+    "balcony": null,
+    "photos": [],
+    "price": {
+      "amount": 23000,
+      "currency": "PHP",
+      "period": "month",
+      "dues_included": null
+    },
+    "price_per_sqm": 638.89,
+    "payment_terms": {
+      "advance_months": null,
+      "deposit_months": null,
+      "minimum_lease_months": null
+    },
+    "amenities": [],
+    "rules": {
+      "pets_allowed": null
+    },
+    "contact": {
+      "name": "Rent Space",
+      "verified": false
+    },
+    "user": {
+      "favorite": false,
+      "status": "new",
+      "notes": "In budget; ask about balcony.\nHandoff tag: ask_agent"
+    }
+  },
+  {
+    "id": "L16",
+    "source": {
+      "platform": "trovit",
+      "url": "https://homes.trovit.ph/detail/019aba43-14a6-7665-86f6-edee33d1f9ab",
+      "captured_at": "2026-10-13T00:00:00.000Z"
+    },
+    "title": "1BR in Rada Regency",
+    "property_type": "condo",
+    "location": {
+      "country": "PH",
+      "city": "Makati",
+      "neighborhood": "Legazpi Village",
+      "building_name": "Rada Regency",
+      "street": "Rada St"
+    },
+    "bedrooms": 1,
+    "bathrooms": 1,
+    "size_sqm": 32,
+    "floor_level": null,
+    "furnishing": "fully_furnished",
+    "balcony": null,
+    "photos": [],
+    "price": {
+      "amount": 23000,
+      "currency": "PHP",
+      "period": "month",
+      "dues_included": null
+    },
+    "price_per_sqm": 718.75,
+    "payment_terms": {
+      "advance_months": null,
+      "deposit_months": null,
+      "minimum_lease_months": null
+    },
+    "amenities": [],
+    "rules": {
+      "pets_allowed": true
+    },
+    "contact": {
+      "name": "Rent Space",
+      "verified": false
+    },
+    "user": {
+      "favorite": false,
+      "status": "new",
+      "notes": "Pets allowed, direct tenants only. Ask about balcony.\nHandoff tag: ask_agent"
+    }
+  },
+  {
+    "id": "L17",
+    "source": {
+      "platform": "trovit",
+      "url": "https://homes.trovit.ph/detail/01a04768-80f7-704b-8439-56709e0e4b44",
+      "captured_at": "2026-10-13T00:00:00.000Z"
+    },
+    "title": "1BR on Tordesillas St",
+    "property_type": "condo",
+    "location": {
+      "country": "PH",
+      "city": "Makati",
+      "neighborhood": "Salcedo Village",
+      "building_name": null,
+      "street": "Tordesillas St"
+    },
+    "bedrooms": 1,
+    "bathrooms": 1,
+    "size_sqm": 29,
+    "floor_level": "14",
+    "furnishing": "fully_furnished",
+    "balcony": null,
+    "photos": [],
+    "price": {
+      "amount": 23000,
+      "currency": "PHP",
+      "period": "month",
+      "dues_included": null
+    },
+    "price_per_sqm": 793.1,
+    "payment_terms": {
+      "advance_months": null,
+      "deposit_months": null,
+      "minimum_lease_months": null
+    },
+    "amenities": ["parking_slot"],
+    "rules": {
+      "pets_allowed": null
+    },
+    "contact": {
+      "name": "Alfredo Paguio",
+      "verified": false
+    },
+    "user": {
+      "favorite": false,
+      "status": "new",
+      "notes": "Near Salcedo Park. Ask about balcony.\nHandoff tag: ask_agent"
+    }
+  },
+  {
+    "id": "L18",
+    "source": {
+      "platform": "trovit",
+      "url": "https://homes.trovit.ph/detail/019f12fc-244f-746b-b62b-129b82b3cef3",
+      "captured_at": "2026-10-13T00:00:00.000Z"
+    },
+    "title": "1BR in Parc Royale",
+    "property_type": "condo",
+    "location": {
+      "country": "PH",
+      "city": "Pasig",
+      "neighborhood": "Ortigas Center (San Antonio)",
+      "building_name": "Parc Royale",
+      "street": "Jade Dr"
+    },
+    "bedrooms": 1,
+    "bathrooms": 1,
+    "size_sqm": 62,
+    "floor_level": null,
+    "furnishing": "semi_furnished",
+    "balcony": null,
+    "photos": [],
+    "price": {
+      "amount": 25000,
+      "currency": "PHP",
+      "period": "month",
+      "dues_included": null
+    },
+    "price_per_sqm": 403.23,
+    "payment_terms": {
+      "advance_months": null,
+      "deposit_months": null,
+      "minimum_lease_months": null
+    },
+    "amenities": [],
+    "rules": {
+      "pets_allowed": null
+    },
+    "contact": {
+      "name": "Jayson Manaol",
+      "verified": false
+    },
+    "user": {
+      "favorite": false,
+      "status": "new",
+      "notes": "Newly renovated, very large for price. Parking +₱3,500 optional. Ask about balcony.\nHandoff tag: ask_agent"
+    }
+  },
+  {
+    "id": "L19",
+    "source": {
+      "platform": "trovit",
+      "url": "https://homes.trovit.ph/detail/019763fd-0025-74ce-85eb-57d8eea562d5",
+      "captured_at": "2026-10-13T00:00:00.000Z"
+    },
+    "title": "1BR on Bank Dr",
+    "property_type": "condo",
+    "location": {
+      "country": "PH",
+      "city": "Mandaluyong",
+      "neighborhood": "Ortigas Center (Wack-Wack side)",
+      "building_name": null,
+      "street": "Bank Dr"
+    },
+    "bedrooms": 1,
+    "bathrooms": 1,
+    "size_sqm": 42,
+    "floor_level": "44",
+    "furnishing": "fully_furnished",
+    "balcony": null,
+    "photos": [],
+    "price": {
+      "amount": 25000,
+      "currency": "PHP",
+      "period": "month",
+      "dues_included": null
+    },
+    "price_per_sqm": 595.24,
+    "payment_terms": {
+      "advance_months": null,
+      "deposit_months": null,
+      "minimum_lease_months": null
+    },
+    "amenities": [],
+    "rules": {
+      "pets_allowed": null
+    },
+    "contact": {
+      "name": "Bienvenido Velasco",
+      "verified": false
+    },
+    "user": {
+      "favorite": false,
+      "status": "new",
+      "notes": "Ready to move in. Ask about balcony.\nHandoff tag: ask_agent"
+    }
+  },
+  {
+    "id": "L20",
+    "source": {
+      "platform": "trovit",
+      "url": "https://homes.trovit.ph/detail/0195198e-f5de-7cc7-b87d-086f06a8c72a",
+      "captured_at": "2026-10-13T00:00:00.000Z"
+    },
+    "title": "1BR in The Exchange Regency",
+    "property_type": "condo",
+    "location": {
+      "country": "PH",
+      "city": "Pasig",
+      "neighborhood": "Ortigas Center (San Antonio)",
+      "building_name": "The Exchange Regency",
+      "street": "Exchange Rd cor. Meralco Ave"
+    },
+    "bedrooms": 1,
+    "bathrooms": 1,
+    "size_sqm": 24.5,
+    "floor_level": null,
+    "furnishing": null,
+    "balcony": null,
+    "photos": [],
+    "price": {
+      "amount": 22000,
+      "currency": "PHP",
+      "period": "month",
+      "dues_included": null
+    },
+    "price_per_sqm": 897.96,
+    "payment_terms": {
+      "advance_months": null,
+      "deposit_months": null,
+      "minimum_lease_months": null
+    },
+    "amenities": [],
+    "rules": {
+      "pets_allowed": null
+    },
+    "contact": {
+      "name": "Bernadette Magbilang",
+      "verified": false
+    },
+    "user": {
+      "favorite": false,
+      "status": "new",
+      "notes": "Small for a 1BR — confirm bedroom door + balcony.\nHandoff tag: ask_agent"
     }
   }
 ]

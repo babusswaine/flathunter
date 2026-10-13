@@ -1,12 +1,13 @@
 import type { Listing } from "./types";
 
 export interface ListingFeature {
-  key: "kitchen" | "hot_shower" | "wifi" | "utility" | "pets";
+  key: "balcony" | "kitchen" | "hot_shower" | "wifi" | "utility" | "pets";
   label: string;
   present: (listing: Listing) => boolean;
 }
 
 export const LISTING_FEATURES: ListingFeature[] = [
+  { key: "balcony", label: "Balcony", present: (l) => l.balcony === true },
   { key: "kitchen", label: "Kitchen", present: (l) => l.amenities.includes("kitchen") },
   { key: "hot_shower", label: "Hot shower", present: (l) => l.amenities.includes("hot_shower") },
   { key: "wifi", label: "WiFi", present: (l) => l.amenities.includes("wifi_ready") },

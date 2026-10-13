@@ -1,6 +1,7 @@
 import {
   Bed,
   ChefHat,
+  Fence,
   type LucideIcon,
   PawPrint,
   ShowerHead,
@@ -34,6 +35,7 @@ export function BedIcons({ count }: { count: number }) {
 }
 
 const FEATURE_ICONS: Record<ListingFeature["key"], LucideIcon> = {
+  balcony: Fence,
   kitchen: ChefHat,
   hot_shower: ShowerHead,
   wifi: Wifi,

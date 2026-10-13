@@ -24,6 +24,7 @@ function listing(overrides: Partial<Listing> = {}): Listing {
     size_sqm: 50,
     floor_level: null,
     furnishing: "fully_furnished",
+    balcony: null,
     photos: [],
     price: { amount: 50000, currency: "PHP", period: "month", dues_included: false },
     price_per_sqm: 1000,
@@ -54,6 +55,12 @@ describe("activeFeatures", () => {
     ]);
     expect(activeFeatures(listing({ rules: { pets_allowed: false } }))).toEqual([]);
     expect(activeFeatures(listing({ rules: { pets_allowed: null } }))).toEqual([]);
+  });
+
+  it("shows balcony only when it's confirmed, not when unknown or absent", () => {
+    expect(activeFeatures(listing({ balcony: true })).map((f) => f.key)).toEqual(["balcony"]);
+    expect(activeFeatures(listing({ balcony: null }))).toEqual([]);
+    expect(activeFeatures(listing({ balcony: false }))).toEqual([]);
   });
 
   it("does not match an unrelated amenity tag", () => {

@@ -22,6 +22,8 @@ export const PLATFORMS = [
   "leboncoin",
   "pap",
   "domain_au",
+  "trovit",
+  "makatirent",
   "other",
 ] as const;
 export type Platform = (typeof PLATFORMS)[number];
@@ -82,13 +84,16 @@ export interface Listing {
   bathrooms: number;
   size_sqm: number | null;
   floor_level: string | null;
-  furnishing: Furnishing;
+  furnishing: Furnishing | null;
+  // Confirmed in the description or photos (true/false), or not yet known
+  // (null) — not just an amenity tick-box on the source site.
+  balcony: boolean | null;
   photos: string[];
   price: {
     amount: number;
     currency: string;
     period: PricePeriod;
-    dues_included: boolean;
+    dues_included: boolean | null;
   };
   price_per_sqm: number | null;
   payment_terms: {

@@ -26,6 +26,8 @@ export const PLATFORMS = [
   "leboncoin",
   "pap",
   "domain_au",
+  "trovit",
+  "makatirent",
   "other",
 ];
 
