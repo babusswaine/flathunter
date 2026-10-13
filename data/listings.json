@@ -288,7 +288,16 @@
     "floor_level": null,
     "furnishing": "fully_furnished",
     "balcony": null,
-    "photos": [],
+    "photos": [
+      "photos/L01/1.webp",
+      "photos/L01/2.webp",
+      "photos/L01/3.webp",
+      "photos/L01/4.webp",
+      "photos/L01/5.webp",
+      "photos/L01/6.webp",
+      "photos/L01/7.webp",
+      "photos/L01/8.webp"
+    ],
     "price": {
       "amount": 22500,
       "currency": "PHP",
@@ -337,7 +346,15 @@
     "floor_level": null,
     "furnishing": "fully_furnished",
     "balcony": null,
-    "photos": [],
+    "photos": [
+      "photos/L02/1.webp",
+      "photos/L02/2.webp",
+      "photos/L02/3.webp",
+      "photos/L02/4.webp",
+      "photos/L02/5.webp",
+      "photos/L02/6.webp",
+      "photos/L02/7.webp"
+    ],
     "price": {
       "amount": 27000,
       "currency": "PHP",
@@ -386,7 +403,14 @@
     "floor_level": "9",
     "furnishing": "fully_furnished",
     "balcony": true,
-    "photos": [],
+    "photos": [
+      "photos/L03/1.webp",
+      "photos/L03/2.webp",
+      "photos/L03/3.webp",
+      "photos/L03/4.webp",
+      "photos/L03/5.webp",
+      "photos/L03/6.webp"
+    ],
     "price": {
       "amount": 28000,
       "currency": "PHP",
@@ -435,7 +459,16 @@
     "floor_level": "9",
     "furnishing": "fully_furnished",
     "balcony": true,
-    "photos": [],
+    "photos": [
+      "photos/L04/1.webp",
+      "photos/L04/2.webp",
+      "photos/L04/3.webp",
+      "photos/L04/4.webp",
+      "photos/L04/5.webp",
+      "photos/L04/6.webp",
+      "photos/L04/7.webp",
+      "photos/L04/8.webp"
+    ],
     "price": {
       "amount": 27000,
       "currency": "PHP",
@@ -484,7 +517,15 @@
     "floor_level": "10",
     "furnishing": "fully_furnished",
     "balcony": true,
-    "photos": [],
+    "photos": [
+      "photos/L05/1.webp",
+      "photos/L05/2.webp",
+      "photos/L05/3.webp",
+      "photos/L05/4.webp",
+      "photos/L05/5.webp",
+      "photos/L05/6.webp",
+      "photos/L05/7.webp"
+    ],
     "price": {
       "amount": 35000,
       "currency": "PHP",
@@ -533,7 +574,16 @@
     "floor_level": "10",
     "furnishing": "fully_furnished",
     "balcony": true,
-    "photos": [],
+    "photos": [
+      "photos/L06/1.webp",
+      "photos/L06/2.webp",
+      "photos/L06/3.webp",
+      "photos/L06/4.webp",
+      "photos/L06/5.webp",
+      "photos/L06/6.webp",
+      "photos/L06/7.webp",
+      "photos/L06/8.webp"
+    ],
     "price": {
       "amount": 32000,
       "currency": "PHP",
@@ -582,7 +632,16 @@
     "floor_level": null,
     "furnishing": "fully_furnished",
     "balcony": true,
-    "photos": [],
+    "photos": [
+      "photos/L07/1.webp",
+      "photos/L07/2.webp",
+      "photos/L07/3.webp",
+      "photos/L07/4.webp",
+      "photos/L07/5.webp",
+      "photos/L07/6.webp",
+      "photos/L07/7.webp",
+      "photos/L07/8.webp"
+    ],
     "price": {
       "amount": 28000,
       "currency": "PHP",
@@ -631,7 +690,13 @@
     "floor_level": "17",
     "furnishing": null,
     "balcony": true,
-    "photos": [],
+    "photos": [
+      "photos/L08/1.webp",
+      "photos/L08/2.webp",
+      "photos/L08/3.webp",
+      "photos/L08/4.webp",
+      "photos/L08/5.webp"
+    ],
     "price": {
       "amount": 30000,
       "currency": "PHP",
@@ -680,7 +745,13 @@
     "floor_level": "25",
     "furnishing": null,
     "balcony": true,
-    "photos": [],
+    "photos": [
+      "photos/L09/1.webp",
+      "photos/L09/2.webp",
+      "photos/L09/3.webp",
+      "photos/L09/4.webp",
+      "photos/L09/5.webp"
+    ],
     "price": {
       "amount": 33000,
       "currency": "PHP",
@@ -729,7 +800,16 @@
     "floor_level": "14",
     "furnishing": "semi_furnished",
     "balcony": true,
-    "photos": [],
+    "photos": [
+      "photos/L10/1.webp",
+      "photos/L10/2.webp",
+      "photos/L10/3.webp",
+      "photos/L10/4.webp",
+      "photos/L10/5.webp",
+      "photos/L10/6.webp",
+      "photos/L10/7.webp",
+      "photos/L10/8.webp"
+    ],
     "price": {
       "amount": 30000,
       "currency": "PHP",
@@ -778,7 +858,7 @@
     "floor_level": "6",
     "furnishing": "fully_furnished",
     "balcony": true,
-    "photos": [],
+    "photos": ["photos/L11/1.webp", "photos/L11/2.webp", "photos/L11/3.webp", "photos/L11/4.webp"],
     "price": {
       "amount": 30000,
       "currency": "PHP",
@@ -827,7 +907,15 @@
     "floor_level": "25",
     "furnishing": null,
     "balcony": null,
-    "photos": [],
+    "photos": [
+      "photos/L12/1.webp",
+      "photos/L12/2.webp",
+      "photos/L12/3.webp",
+      "photos/L12/4.webp",
+      "photos/L12/5.webp",
+      "photos/L12/6.webp",
+      "photos/L12/7.webp"
+    ],
     "price": {
       "amount": 33000,
       "currency": "PHP",
@@ -876,7 +964,16 @@
     "floor_level": "4",
     "furnishing": "semi_furnished",
     "balcony": true,
-    "photos": [],
+    "photos": [
+      "photos/L13/1.webp",
+      "photos/L13/2.webp",
+      "photos/L13/3.webp",
+      "photos/L13/4.webp",
+      "photos/L13/5.webp",
+      "photos/L13/6.webp",
+      "photos/L13/7.webp",
+      "photos/L13/8.webp"
+    ],
     "price": {
       "amount": 30000,
       "currency": "PHP",
@@ -925,7 +1022,13 @@
     "floor_level": null,
     "furnishing": "fully_furnished",
     "balcony": true,
-    "photos": [],
+    "photos": [
+      "photos/L14/1.webp",
+      "photos/L14/2.webp",
+      "photos/L14/3.webp",
+      "photos/L14/4.webp",
+      "photos/L14/5.webp"
+    ],
     "price": {
       "amount": 20000,
       "currency": "PHP",
@@ -974,7 +1077,16 @@
     "floor_level": null,
     "furnishing": null,
     "balcony": null,
-    "photos": [],
+    "photos": [
+      "photos/L15/1.webp",
+      "photos/L15/2.webp",
+      "photos/L15/3.webp",
+      "photos/L15/4.webp",
+      "photos/L15/5.webp",
+      "photos/L15/6.webp",
+      "photos/L15/7.webp",
+      "photos/L15/8.webp"
+    ],
     "price": {
       "amount": 23000,
       "currency": "PHP",
@@ -1023,7 +1135,16 @@
     "floor_level": null,
     "furnishing": "fully_furnished",
     "balcony": null,
-    "photos": [],
+    "photos": [
+      "photos/L16/1.webp",
+      "photos/L16/2.webp",
+      "photos/L16/3.webp",
+      "photos/L16/4.webp",
+      "photos/L16/5.webp",
+      "photos/L16/6.webp",
+      "photos/L16/7.webp",
+      "photos/L16/8.webp"
+    ],
     "price": {
       "amount": 23000,
       "currency": "PHP",
@@ -1072,7 +1193,15 @@
     "floor_level": "14",
     "furnishing": "fully_furnished",
     "balcony": null,
-    "photos": [],
+    "photos": [
+      "photos/L17/1.webp",
+      "photos/L17/2.webp",
+      "photos/L17/3.webp",
+      "photos/L17/4.webp",
+      "photos/L17/5.webp",
+      "photos/L17/6.webp",
+      "photos/L17/7.webp"
+    ],
     "price": {
       "amount": 23000,
       "currency": "PHP",
@@ -1121,7 +1250,16 @@
     "floor_level": null,
     "furnishing": "semi_furnished",
     "balcony": null,
-    "photos": [],
+    "photos": [
+      "photos/L18/1.webp",
+      "photos/L18/2.webp",
+      "photos/L18/3.webp",
+      "photos/L18/4.webp",
+      "photos/L18/5.webp",
+      "photos/L18/6.webp",
+      "photos/L18/7.webp",
+      "photos/L18/8.webp"
+    ],
     "price": {
       "amount": 25000,
       "currency": "PHP",
@@ -1170,7 +1308,16 @@
     "floor_level": "44",
     "furnishing": "fully_furnished",
     "balcony": null,
-    "photos": [],
+    "photos": [
+      "photos/L19/1.webp",
+      "photos/L19/2.webp",
+      "photos/L19/3.webp",
+      "photos/L19/4.webp",
+      "photos/L19/5.webp",
+      "photos/L19/6.webp",
+      "photos/L19/7.webp",
+      "photos/L19/8.webp"
+    ],
     "price": {
       "amount": 25000,
       "currency": "PHP",
@@ -1219,7 +1366,13 @@
     "floor_level": null,
     "furnishing": null,
     "balcony": null,
-    "photos": [],
+    "photos": [
+      "photos/L20/1.webp",
+      "photos/L20/2.webp",
+      "photos/L20/3.webp",
+      "photos/L20/4.webp",
+      "photos/L20/5.webp"
+    ],
     "price": {
       "amount": 22000,
       "currency": "PHP",
