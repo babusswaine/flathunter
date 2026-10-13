@@ -10,5 +10,13 @@
   "València": {
     "image": "cities/valencia.webp",
     "attribution": "City of Arts and Sciences, Valencia — photo by Cateecatee, CC BY-SA 3.0, via Wikimedia Commons"
+  },
+  "Pasig": {
+    "image": "cities/pasig.webp",
+    "attribution": "Ortigas Center, Pasig — photo via the Department of Tourism (Love the Philippines)"
+  },
+  "Mandaluyong": {
+    "image": "cities/mandaluyong.webp",
+    "attribution": "San Felipe Neri Church, Mandaluyong — photo via the Department of Tourism (Love the Philippines)"
   }
 }
