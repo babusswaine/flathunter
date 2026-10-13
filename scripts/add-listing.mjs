@@ -85,8 +85,10 @@ async function main() {
   }
   if (!PROPERTY_TYPES.includes(input.property_type))
     fail(`property_type must be one of ${PROPERTY_TYPES.join(", ")}`);
-  if (!FURNISHING.includes(input.furnishing))
-    fail(`furnishing must be one of ${FURNISHING.join(", ")}`);
+  if (input.furnishing !== null && !FURNISHING.includes(input.furnishing))
+    fail(`furnishing must be one of ${FURNISHING.join(", ")}, or null if unknown`);
+  if (input.balcony !== undefined && ![true, false, null].includes(input.balcony))
+    fail("balcony must be true, false, or null (unknown)");
   if (!input.source?.platform || !PLATFORMS.includes(input.source.platform))
     fail(`source.platform must be one of ${PLATFORMS.join(", ")}`);
   if (!input.source?.url) fail("source.url is required");
@@ -152,12 +154,13 @@ async function main() {
     size_sqm: sizeSqm,
     floor_level: input.floor_level ?? null,
     furnishing: input.furnishing,
+    balcony: input.balcony ?? null,
     photos,
     price: {
       amount: input.price.amount,
       currency: input.price.currency ?? "PHP",
       period: input.price.period ?? "month",
-      dues_included: input.price.dues_included ?? false,
+      dues_included: input.price.dues_included ?? null,
     },
     price_per_sqm: sizeSqm ? Math.round((input.price.amount / sizeSqm) * 100) / 100 : null,
     payment_terms: {

@@ -26,6 +26,8 @@ const PLATFORM_LABELS: Record<Platform, string> = {
   leboncoin: "LeBonCoin",
   pap: "PAP.fr",
   domain_au: "Domain",
+  trovit: "Trovit",
+  makatirent: "MakatiRent",
   other: "Other",
 };
 

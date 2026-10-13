@@ -88,7 +88,11 @@ export function ListingDetail({ listing: initial }: { listing: Listing }) {
         <Field label="Bathrooms" value={listing.bathrooms} />
         <Field label="Size" value={listing.size_sqm !== null ? `${listing.size_sqm} m²` : null} />
         <Field label="Floor" value={listing.floor_level} />
-        <Field label="Furnishing" value={listing.furnishing.replace(/_/g, " ")} />
+        <Field label="Furnishing" value={listing.furnishing?.replace(/_/g, " ") ?? null} />
+        <Field
+          label="Balcony"
+          value={listing.balcony === null ? "Not confirmed" : listing.balcony ? "Yes" : "No"}
+        />
         <Field
           label="Price"
           value={`${formatCurrency(listing.price.amount, listing.price.currency)}/${listing.price.period}${listing.price.dues_included ? " (dues incl.)" : ""}`}

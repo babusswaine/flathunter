@@ -46,6 +46,11 @@ describe("PLATFORMS", () => {
     }
   });
 
+  it("includes the PH sources from the 2026-10 handoff", () => {
+    expect(PLATFORMS).toContain("trovit");
+    expect(PLATFORMS).toContain("makatirent");
+  });
+
   it("does not include excluded platforms", () => {
     for (const excluded of ["seloger", "realestate_au", "flatmates_au"]) {
       expect(PLATFORMS).not.toContain(excluded);
